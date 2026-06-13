@@ -1,7 +1,7 @@
 // ← ЗАМЕНИ ЭТИ ЗНАЧЕНИЯ НА СВОИ
 window.WAVER_CONFIG = {
   // Formspree: зайди на formspree.io → New Form → скопируй ID из URL (после /f/)
-  formspreeId: "YOUR_FORM_ID",
+  formspreeId: "xqeoggwp",
 
   // Контакты в подвале
   telegram: "https://t.me/your_username",
