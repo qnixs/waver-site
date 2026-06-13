@@ -142,7 +142,12 @@
       form.method = "POST";
     }
 
-    form.addEventListener("submit", async (e) => {
+    const nextField = document.getElementById("form-next");
+    if (nextField) {
+      nextField.value = new URL("thanks.html", window.location.href).href;
+    }
+
+    form.addEventListener("submit", (e) => {
       const error = validateForm();
       if (error) {
         e.preventDefault();
@@ -152,38 +157,8 @@
       }
 
       formError.classList.remove("visible");
-
-      if (!form.action || form.action.includes("YOUR_FORM_ID")) {
-        e.preventDefault();
-        formError.textContent = "Укажи Formspree ID в js/config.js";
-        formError.classList.add("visible");
-        return;
-      }
-
-      e.preventDefault();
       submitBtn.disabled = true;
       submitBtn.textContent = "Отправляем…";
-
-      try {
-        const response = await fetch(form.action, {
-          method: "POST",
-          body: new FormData(form),
-          headers: { Accept: "application/json" },
-        });
-
-        if (response.ok) {
-          window.location.href = "thanks.html";
-          return;
-        }
-
-        const data = await response.json().catch(() => ({}));
-        throw new Error(data.error || "Не удалось отправить заявку");
-      } catch (err) {
-        formError.textContent = err.message || "Ошибка отправки. Попробуй ещё раз.";
-        formError.classList.add("visible");
-        submitBtn.disabled = false;
-        submitBtn.textContent = "Оформить заказ →";
-      }
     });
   }
 
