@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Галерея — WaverStore</title>
+  <meta name="description" content="Фото скрытых розеток и выключателей WaverStore в керамограните. Примеры монтажа на кухне и в ванной.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" data-brand>WaverStore</a>
+      <nav class="nav">
+        <div class="nav-links">
+          <a href="index.html#about">О продукте</a>
+          <a href="index.html#catalog">Каталог</a>
+          <a href="index.html#prices">Цены</a>
+          <a href="gallery.html" class="active">Галерея</a>
+          <a href="download.html">Скачать</a>
+        </div>
+        <a href="index.html#order" class="btn btn-dark">Заказать</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">Галерея</p>
+        <h1>Фото и примеры монтажа</h1>
+        <p class="section-lead">Скрытые розетки, кухня, ванная — реальные объекты WaverStore.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="gallery-page-grid" id="gallery-full"></div>
+        <p class="section-lead" style="margin-top:2rem">
+          Чтобы добавить фото: положи файлы в <code>images/gallery/</code> и пропиши их в <code>js/config.js</code> → <code>galleryImages</code>, затем <code>git push</code>.
+        </p>
+        <div style="margin-top:1.5rem;display:flex;gap:0.75rem;flex-wrap:wrap">
+          <a href="index.html#order" class="btn btn-primary">Оформить заказ</a>
+          <a href="index.html" class="btn btn-outline">На главную</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p class="footer-logo" data-brand>WaverStore</p>
+        <p>📍 Производство: г. Тюмень</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Главная</a>
+        <a href="download.html">Скачать</a>
+        <a href="offer.html">Оферта</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/layout.js"></script>
+  <script>
+    (function () {
+      const images = (window.WAVER_CONFIG || {}).galleryImages || [];
+      const grid = document.getElementById("gallery-full");
+      if (!grid) return;
+      grid.innerHTML = images.map((img) => `
+        <figure class="gallery-page-item">
+          <img src="${img.src}" alt="${img.alt || ""}" loading="lazy"
+               onerror="this.style.display='none'">
+          <figcaption>${img.caption || img.alt || ""}</figcaption>
+        </figure>
+      `).join("");
+    })();
+  </script>
+</body>
+</html>

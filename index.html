@@ -3,62 +3,65 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WAVER — розетки и выключатели в керамограните</title>
-  <meta name="description" content="Розетки и выключатели заподлицо в керамограните. Собственное производство в Тюмени. Бесплатная доставка по городу.">
+  <title>WaverStore — скрытые розетки и выключатели в керамограните</title>
+  <meta name="description" content="WaverStore — скрытые розетки и выключатели заподлицо в керамограните. Для кухни, ванной и премиум-интерьера. Производство в Тюмени.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a href="#" class="logo">WAVER<span>.</span></a>
+      <a href="index.html" class="logo" data-brand>WaverStore</a>
       <nav class="nav">
         <div class="nav-links">
           <a href="#about">О продукте</a>
+          <a href="#catalog">Каталог</a>
           <a href="#prices">Цены</a>
+          <a href="gallery.html">Галерея</a>
+          <a href="download.html">Скачать</a>
           <a href="#faq">FAQ</a>
         </div>
-        <a href="#order" class="btn btn-dark">Оформить заказ</a>
+        <a href="#order" class="btn btn-dark">Заказать</a>
+        <button type="button" class="menu-btn" id="menu-btn" aria-label="Меню">☰</button>
       </nav>
     </div>
   </header>
+
+  <nav class="mobile-nav" id="mobile-nav">
+    <a href="#about">О продукте</a>
+    <a href="#catalog">Каталог</a>
+    <a href="#prices">Цены</a>
+    <a href="gallery.html">Галерея</a>
+    <a href="download.html">Скачать комплект</a>
+    <a href="#faq">FAQ</a>
+    <a href="offer.html">Оферта</a>
+    <a href="#order">Оформить заказ</a>
+  </nav>
 
   <main>
     <section class="hero">
       <div class="container hero-grid">
         <div>
           <p class="eyebrow">Собственное производство · Тюмень</p>
-          <h1>Розетки и выключатели <em>заподлицо</em> в керамограните</h1>
+          <h1>Скрытые розетки и выключатели <em>заподлицо</em> в керамограните</h1>
           <p class="hero-lead">
-            Механизм утоплен в облицовку — снаружи только ровная плоскость плитки.
-            Для премиум-объектов, мастеров и плиточников.
+            WaverStore — механизм утоплен в облицовку, снаружи только ровная плоскость плитки.
+            Идеально для кухни, ванной и премиум-объектов.
           </p>
           <ul class="feature-list">
-            <li>Рамки объединяются в блоки из 2–3+ постов</li>
-            <li>Бесплатная доставка по Тюмени</li>
-            <li>Партнёрам и мастерам — приоритет и спеццены</li>
-            <li>Тестовый комплект для мастеров −30%</li>
+            <li>Скрытые розетки без рамок и выступов</li>
+            <li>Розетки на кухне и в ванной — влагостойкий монтаж</li>
+            <li>Блоки из 2–3+ постов в единую панель</li>
+            <li>Бесплатная доставка по Тюмени от 10 шт</li>
           </ul>
           <div class="hero-actions">
             <a href="#order" class="btn btn-primary">Оформить заказ</a>
-            <a href="#order" class="btn btn-outline">Тестовый комплект −30%</a>
+            <a href="download.html" class="btn btn-outline">Скачать комплект</a>
           </div>
         </div>
-        <div class="hero-visual">
-          <div class="hero-grid-tiles">
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-          </div>
-          <div class="hero-socket" aria-hidden="true"></div>
-          <div class="hero-caption">
-            Розетка WAVER · заподлицо, без выступа
-            <small>место для вашего фото / видео</small>
-          </div>
-        </div>
+        <div class="carousel" id="hero-carousel" aria-label="Фотографии продукта"></div>
       </div>
     </section>
 
@@ -73,7 +76,7 @@
           <p class="stat-label">стандартный пост</p>
         </div>
         <div>
-          <p class="stat-value">от 2&nbsp;550 ₽</p>
+          <p class="stat-value">от 3&nbsp;940 ₽</p>
           <p class="stat-label">для мастеров при объёме</p>
         </div>
         <div>
@@ -86,23 +89,63 @@
     <section class="section" id="about">
       <div class="container">
         <p class="eyebrow">Главное</p>
-        <h2>Что важно знать про WAVER</h2>
+        <h2>Что важно знать про WaverStore</h2>
         <div class="cards-3">
           <article class="card">
             <div class="card-icon">▦</div>
             <h3>Блоки из 2, 3 и более постов</h3>
-            <p>Рамки объединяются: розетки и выключатели собираются в один аккуратный блок. Пост 71 мм — стандарт, можно расширить позже.</p>
+            <p>Рамки объединяются: розетки и выключатели собираются в один аккуратный блок. Пост 71 мм — стандарт.</p>
           </article>
           <article class="card">
-            <div class="card-icon">🚚</div>
-            <h3>Бесплатная доставка по Тюмени</h3>
-            <p>Самовывоз с производства — всегда бесплатно. Курьер по Тюмени — бесплатно от 10 шт. По России: Ozon, СДЭК, Boxberry, Почта.</p>
+            <div class="card-icon">🚿</div>
+            <h3>Розетки на кухне и в ванной</h3>
+            <p>Скрытые розетки заподлицо — ровная плитка без рамок. Для влажных зон уточните серию при заказе.</p>
           </article>
           <article class="card">
             <div class="card-icon">🤝</div>
             <h3>Партнёрам — приоритет</h3>
-            <p>Мастерам и плиточникам: спеццены от 2 550 ₽/шт, тестовый комплект −30%, резерв на складе и материалы для презентации клиенту.</p>
+            <p>Мастерам и плиточникам: спеццены от 3 940 ₽/шт, тестовый комплект −30%, материалы для презентации клиенту.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-white" id="catalog">
+      <div class="container">
+        <p class="eyebrow">Каталог</p>
+        <h2>Что в наличии</h2>
+        <p class="section-lead">Выберите изделие при оформлении заказа. Двухклавишный выключатель — скоро.</p>
+        <div class="catalog-grid">
+          <article class="catalog-card">
+            <span class="badge-stock">В наличии</span>
+            <h3>Розетка скрытая, 1 пост</h3>
+            <p>арт. 3028910163 · чёрный · шаблон для реза в комплекте</p>
+            <a href="#order" class="btn btn-outline" style="margin-top:0.5rem;width:fit-content;padding:0.5rem 1rem;font-size:0.8125rem">Заказать</a>
+          </article>
+          <article class="catalog-card">
+            <span class="badge-stock">В наличии</span>
+            <h3>Выключатель одноклавишный</h3>
+            <p>Заподлицо в керамограните · 1 пост · 71 мм</p>
+            <a href="#order" class="btn btn-outline" style="margin-top:0.5rem;width:fit-content;padding:0.5rem 1rem;font-size:0.8125rem">Заказать</a>
+          </article>
+          <article class="catalog-card soon">
+            <span class="badge-soon">Скоро</span>
+            <h3>Выключатель двухклавишный</h3>
+            <p>Готовим к запуску. Оставьте заявку — сообщим о поступлении.</p>
+            <a href="#order" class="btn btn-outline" style="margin-top:0.5rem;width:fit-content;padding:0.5rem 1rem;font-size:0.8125rem">Предзаказ</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="gallery-preview-section">
+      <div class="container">
+        <p class="eyebrow">Галерея</p>
+        <h2>Фото и примеры монтажа</h2>
+        <p class="section-lead">Положи свои фото в папку <code>images/gallery/</code> — они появятся автоматически.</p>
+        <div class="gallery-preview" id="gallery-preview"></div>
+        <div style="margin-top:1.25rem">
+          <a href="gallery.html" class="btn btn-outline">Смотреть всю галерею →</a>
         </div>
       </div>
     </section>
@@ -113,9 +156,7 @@
           <p class="eyebrow">Цены</p>
           <h2>Чем больше партия — тем ниже цена</h2>
           <p class="section-lead">
-            Розетка скрытая, 1 пост (арт. 3028910163, чёрный).
-            Скидка мастера применяется автоматически в форме заказа.
-            Выключатели 1- и 2-клавишные — скоро в продаже.
+            Розница от 5 000 ₽/шт. Тариф мастера включается в форме заказа — скидка применяется автоматически.
           </p>
         </div>
         <div class="price-table-wrap">
@@ -123,23 +164,23 @@
             <tbody>
               <tr>
                 <td>Розница, 1–9 шт</td>
-                <td>3&nbsp;241 ₽</td>
+                <td>5&nbsp;000 ₽</td>
               </tr>
               <tr>
                 <td>Мастера и плиточники, 1–9 шт</td>
-                <td>2&nbsp;990 ₽</td>
+                <td>4&nbsp;620 ₽</td>
               </tr>
               <tr class="highlight">
                 <td>От 10 штук <span class="badge">популярно</span></td>
-                <td>2&nbsp;850 ₽</td>
+                <td>4&nbsp;400 ₽</td>
               </tr>
               <tr>
                 <td>От 20 штук</td>
-                <td>2&nbsp;690 ₽</td>
+                <td>4&nbsp;150 ₽</td>
               </tr>
               <tr>
                 <td>От 30 штук · −21%</td>
-                <td>2&nbsp;550 ₽</td>
+                <td>3&nbsp;940 ₽</td>
               </tr>
             </tbody>
           </table>
@@ -152,17 +193,31 @@
         <p class="eyebrow">Заказ</p>
         <h2>Оформите заказ за минуту</h2>
         <p class="section-lead">
-          Укажите количество, способ доставки и контакты — мы подтвердим заказ и согласуем оплату.
+          Выберите изделие, количество и доставку. Мы ответим в Telegram или WhatsApp — звонить не обязательно.
         </p>
 
         <form id="order-form" class="order-grid" novalidate>
           <div>
             <div class="order-form-card">
-              <h3>1 · Состав заказа</h3>
+              <h3>1 · Изделие и количество</h3>
+              <div class="product-picks">
+                <button type="button" class="product-pick selected" data-product="socket">
+                  <strong>Розетка скрытая, 1 пост</strong>
+                  <span>арт. 3028910163 · чёрный · в наличии</span>
+                </button>
+                <button type="button" class="product-pick" data-product="switch1">
+                  <strong>Выключатель одноклавишный, 1 пост</strong>
+                  <span>заподлицо в керамограните · в наличии</span>
+                </button>
+                <button type="button" class="product-pick disabled" data-product="switch2" disabled>
+                  <strong>Выключатель двухклавишный</strong>
+                  <span>скоро в продаже — укажите в комментарии, если нужен</span>
+                </button>
+              </div>
               <div class="product-row">
                 <div>
-                  <p><strong>Розетка скрытая, 1 пост</strong></p>
-                  <p class="sub">арт. 3028910163 · чёрный · шаблон для реза в комплекте</p>
+                  <p><strong>Количество</strong></p>
+                  <p class="sub">Цена пересчитается автоматически</p>
                 </div>
                 <div class="qty-control">
                   <button type="button" class="qty-btn" id="qty-minus" aria-label="меньше">−</button>
@@ -170,18 +225,23 @@
                   <button type="button" class="qty-btn" id="qty-plus" aria-label="больше">+</button>
                 </div>
               </div>
-              <label class="toggle-row">
-                <input type="checkbox" id="is-master" name="is_master" checked>
-                Я мастер / плиточник — профессиональный тариф
-              </label>
+
+              <div class="master-card" id="master-card">
+                <div class="master-info">
+                  <strong id="master-label">Тариф мастера выключен</strong>
+                  <small>Я мастер / плиточник — включите для спеццены</small>
+                </div>
+                <button type="button" class="master-switch" id="master-toggle" role="switch" aria-pressed="false" aria-label="Тариф мастера"></button>
+                <input type="hidden" name="is_master" id="is-master" value="нет">
+              </div>
             </div>
 
-            <div class="order-form-card" style="margin-top: 1.75rem">
+            <div class="order-form-card">
               <h3>2 · Доставка</h3>
               <div class="delivery-grid" id="delivery-options">
                 <button type="button" class="delivery-option selected" data-delivery="Ozon Delivery">
                   <strong>Ozon Delivery</strong>
-                  <span>любой ПВЗ Ozon — удобно по пути на объект</span>
+                  <span>любой ПВЗ Ozon</span>
                 </button>
                 <button type="button" class="delivery-option" data-delivery="СДЭК">
                   <strong>СДЭК</strong>
@@ -189,11 +249,11 @@
                 </button>
                 <button type="button" class="delivery-option" data-delivery="Boxberry">
                   <strong>Boxberry</strong>
-                  <span>пункты выдачи по всей стране</span>
+                  <span>пункты выдачи по России</span>
                 </button>
-                <button type="button" class="delivery-option" data-delivery="Почта России / ТК">
-                  <strong>Почта России / ТК</strong>
-                  <span>выгодно для партий от 20 шт</span>
+                <button type="button" class="delivery-option" data-delivery="Почта России">
+                  <strong>Почта России</strong>
+                  <span>выгодно от 20 шт</span>
                 </button>
                 <button type="button" class="delivery-option" data-delivery="Самовывоз, Тюмень">
                   <strong>Самовывоз, Тюмень</strong>
@@ -201,7 +261,7 @@
                 </button>
                 <button type="button" class="delivery-option" data-delivery="Курьер по Тюмени">
                   <strong>Курьер по Тюмени</strong>
-                  <span>200–400 ₽, от 10 шт — бесплатно</span>
+                  <span>от 10 шт — бесплатно</span>
                 </button>
               </div>
               <input type="hidden" name="delivery" id="delivery-value" value="Ozon Delivery">
@@ -211,14 +271,15 @@
                   <input id="city" name="city" placeholder="Екатеринбург" maxlength="100">
                 </div>
                 <div>
-                  <label for="address">Адрес или пункт выдачи</label>
+                  <label for="address">Адрес или ПВЗ</label>
                   <input id="address" name="address" placeholder="ул. Ленина 5, ПВЗ Ozon" maxlength="300">
                 </div>
               </div>
             </div>
 
-            <div class="order-form-card" style="margin-top: 1.75rem">
+            <div class="order-form-card">
               <h3>3 · Контакты</h3>
+              <p class="section-lead" style="margin:0 0 0.75rem">Ответим в мессенджере — звонить не нужно.</p>
               <div class="field-grid contacts">
                 <div>
                   <label for="name">Имя *</label>
@@ -229,16 +290,25 @@
                   <input id="phone" name="phone" type="tel" required maxlength="20" placeholder="+7 ___ ___-__-__">
                 </div>
               </div>
-              <div class="field-grid" style="margin-top: 0.75rem">
+              <div class="field-grid" style="margin-top:0.625rem">
                 <div>
                   <label for="email">Email</label>
-                  <input id="email" name="email" type="email" maxlength="100" placeholder="для счёта и подтверждения">
+                  <input id="email" name="email" type="email" maxlength="100" placeholder="для счёта">
+                </div>
+                <div>
+                  <label for="preferred_contact">Как связаться</label>
+                  <select id="preferred_contact" name="preferred_contact" style="width:100%;padding:0.625rem 0.75rem;border:1px solid #d9d2c4;border-radius:0.5rem;font:inherit;background:#fff">
+                    <option value="Telegram">Написать в Telegram</option>
+                    <option value="WhatsApp">Написать в WhatsApp</option>
+                    <option value="Email">Email</option>
+                    <option value="Звонок">Позвонить</option>
+                  </select>
                 </div>
               </div>
-              <div class="field-grid" style="margin-top: 0.75rem">
+              <div class="field-grid" style="margin-top:0.625rem">
                 <div>
-                  <label for="comment">Комментарий (необязательно)</label>
-                  <textarea id="comment" name="comment" rows="2" maxlength="1000" placeholder="Например: толщина керамогранита 10 мм, нужен счёт для ИП"></textarea>
+                  <label for="comment">Комментарий</label>
+                  <textarea id="comment" name="comment" rows="2" maxlength="1000" placeholder="Толщина плитки, нужен двухклавишный, счёт для ИП…"></textarea>
                 </div>
               </div>
             </div>
@@ -249,22 +319,23 @@
             <div class="summary-lines" id="summary-lines"></div>
             <div class="summary-total">
               <span>Итого</span>
-              <span id="total-price">14&nbsp;950 ₽</span>
+              <span id="total-price">23&nbsp;100 ₽</span>
             </div>
             <p class="summary-note">+ доставка по тарифу службы</p>
 
-            <input type="hidden" name="product" value="Розетка скрытая, 1 пост (арт. 3028910163)">
+            <input type="hidden" name="product" id="hidden-product" value="Розетка скрытая, 1 пост">
             <input type="hidden" name="unit_price" id="hidden-unit-price">
             <input type="hidden" name="total" id="hidden-total">
             <input type="hidden" name="tariff" id="hidden-tariff">
             <input type="hidden" name="savings" id="hidden-savings">
-            <input type="hidden" name="_subject" value="Новый заказ WAVER">
+            <input type="hidden" name="_subject" value="Новый заказ WaverStore">
             <input type="hidden" name="_language" value="ru">
             <input type="hidden" name="_next" id="form-next" value="">
 
             <button type="submit" class="btn btn-accent" id="submit-btn">Оформить заказ →</button>
             <p class="form-note">
-              Это заявка, а не оплата. Менеджер подтвердит наличие, стоимость доставки и пришлёт счёт или ссылку на оплату.
+              Заявка, не оплата. Подтвердим в мессенджере и пришлём счёт.
+              <a href="offer.html" style="color:#c9c4bc;text-decoration:underline">Оферта</a>
             </p>
             <p class="form-error" id="form-error"></p>
           </aside>
@@ -272,34 +343,49 @@
       </div>
     </section>
 
-    <section class="section section-white" id="faq">
+    <section class="section section-white contacts-section" id="contacts">
+      <div class="container">
+        <p class="eyebrow">Контакты</p>
+        <h2>Напишите нам — ответим быстрее звонка</h2>
+        <p class="contacts-note">
+          Предпочитаем Telegram и WhatsApp. Звонить не обязательно — напишите вопрос, пришлём фото, цену и сроки.
+        </p>
+        <div class="contacts-buttons">
+          <a id="contact-telegram" href="#" class="btn btn-messenger btn-telegram" target="_blank" rel="noopener">✈️ Telegram</a>
+          <a id="contact-whatsapp" href="#" class="btn btn-messenger btn-whatsapp" target="_blank" rel="noopener">💬 WhatsApp</a>
+        </div>
+        <p style="margin-top:1.5rem;font-size:0.875rem;color:var(--muted)">📍 Производство: г. Тюмень</p>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
       <div class="container faq">
         <p class="eyebrow">FAQ</p>
-        <h2 style="max-width: none">Вопросы и ответы</h2>
+        <h2 style="max-width:none">Вопросы и ответы</h2>
         <div class="faq-list">
           <div class="faq-item">
-            <button type="button" class="faq-question">Совместима ли розетка с моим керамогранитом?<span>+</span></button>
-            <div class="faq-answer">Да, для плитки толщиной от 6 до 20 мм. В комплекте шаблон для точного выреза под механизм.</div>
+            <button type="button" class="faq-question">Что такое скрытые розетки WaverStore?<span>+</span></button>
+            <div class="faq-answer">Механизм утоплен в керамогранит — снаружи только ровная плоскость плитки, без рамок и выступов. Подходит для премиум-интерьера.</div>
           </div>
           <div class="faq-item">
-            <button type="button" class="faq-question">Можно собрать несколько розеток и выключателей рядом?<span>+</span></button>
-            <div class="faq-answer">Да, рамки стыкуются в единый блок из 2, 3 и более постов — получается ровная панель без зазоров.</div>
+            <button type="button" class="faq-question">Подходят ли розетки на кухне?<span>+</span></button>
+            <div class="faq-answer">Да. Скрытые розетки заподлицо удобны на кухонном фартуке — ровная плитка без рамок, легко мыть и выглядит аккуратно.</div>
           </div>
           <div class="faq-item">
-            <button type="button" class="faq-question">Как проходит монтаж?<span>+</span></button>
-            <div class="faq-answer">Стандартный подрозетник, механизм утоплен в плитку по шаблону. Монтаж делает электрик, плиточник вырезает отверстие по прилагаемому шаблону.</div>
+            <button type="button" class="faq-question">Можно ли ставить розетки в ванной?<span>+</span></button>
+            <div class="faq-answer">Да, при правильном монтаже и влагозащищённой серии. Укажите в комментарии к заказу — подберём нужное исполнение.</div>
           </div>
           <div class="faq-item">
-            <button type="button" class="faq-question">Что входит в комплект?<span>+</span></button>
-            <div class="faq-answer">Рамка с механизмом, крепёж, шаблон для реза, инструкция. Декоративная плитка — ваша (или подбираем под заказ).</div>
+            <button type="button" class="faq-question">Как включить тариф мастера?<span>+</span></button>
+            <div class="faq-answer">В форме заказа нажмите переключатель «Тариф мастера» — цена пересчитается автоматически. Работает на телефоне: просто тапните по переключателю справа.</div>
           </div>
           <div class="faq-item">
-            <button type="button" class="faq-question">Подходит ли для ванной?<span>+</span></button>
-            <div class="faq-answer">Да, при правильном монтаже и влагозащищённом исполнении механизма. Уточните в комментарии к заказу — подберём нужную серию.</div>
+            <button type="button" class="faq-question">Когда будет двухклавишный выключатель?<span>+</span></button>
+            <div class="faq-answer">Скоро в продаже. Оставьте предзаказ в комментарии к заявке — сообщим о поступлении первыми.</div>
           </div>
           <div class="faq-item">
             <button type="button" class="faq-question">Как происходит оплата?<span>+</span></button>
-            <div class="faq-answer">После заявки менеджер связывается с вами, подтверждает заказ и присылает счёт или ссылку на оплату. Предоплата или оплата при получении — по договорённости.</div>
+            <div class="faq-answer">После заявки пишем в мессенджер, подтверждаем заказ и присылаем счёт или ссылку на оплату.</div>
           </div>
         </div>
       </div>
@@ -309,20 +395,38 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div>
-        <p class="footer-logo">WAVER<span>.</span></p>
+        <p class="footer-logo" data-brand>WaverStore</p>
         <p>📍 Производство: г. Тюмень</p>
+        <div class="footer-messenger">
+          <a id="footer-telegram" href="#" class="btn btn-telegram" target="_blank" rel="noopener">Telegram</a>
+          <a id="footer-whatsapp" href="#" class="btn btn-whatsapp" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
       </div>
-      <div class="footer-contacts">
-        <p>
-          Telegram: <a id="footer-telegram" href="#">@your_username</a>
-          · WhatsApp: <a id="footer-whatsapp" href="#">+7 900 000-00-00</a>
-        </p>
-        <p style="margin-top: 0.25rem; font-size: 0.75rem">замени контакты в файле js/config.js</p>
+      <div>
+        <div class="footer-links">
+          <a href="gallery.html">Галерея</a>
+          <a href="download.html">Скачать</a>
+          <a href="offer.html">Оферта</a>
+          <a href="#order">Заказать</a>
+        </div>
+        <p style="margin-top:0.75rem;font-size:0.75rem">© <span data-brand>WaverStore</span></p>
       </div>
     </div>
   </footer>
 
   <script src="js/config.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/carousel.js"></script>
   <script src="js/main.js"></script>
+  <script>
+    document.getElementById("menu-btn")?.addEventListener("click", () => {
+      document.getElementById("mobile-nav").classList.toggle("open");
+    });
+    document.getElementById("master-card")?.addEventListener("click", (e) => {
+      if (e.target.id !== "master-toggle") {
+        document.getElementById("master-toggle")?.click();
+      }
+    });
+  </script>
 </body>
 </html>

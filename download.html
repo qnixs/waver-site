@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Скачать комплект — WaverStore</title>
+  <meta name="description" content="Скачать комплект документации WaverStore: шаблоны, инструкция по монтажу скрытых розеток в керамограните.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" data-brand>WaverStore</a>
+      <nav class="nav">
+        <div class="nav-links">
+          <a href="index.html#about">О продукте</a>
+          <a href="gallery.html">Галерея</a>
+          <a href="download.html" class="active">Скачать</a>
+          <a href="index.html#order">Заказать</a>
+        </div>
+        <a href="index.html#order" class="btn btn-dark">Заказать</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">Документация</p>
+        <h1>Скачать комплект</h1>
+        <p class="section-lead">Шаблон для реза, инструкция по монтажу и спецификация — всё для мастера и плиточника.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="download-box">
+          <p><strong>Комплект WaverStore (PDF)</strong><br>Шаблон, инструкция, технические параметры</p>
+          <a id="download-btn" href="#" class="btn btn-primary" download>Скачать комплект →</a>
+          <p class="section-lead" style="margin-top:1.25rem;font-size:0.8125rem">
+            Положи свой PDF в папку <code>files/</code> и укажи путь в <code>js/config.js</code> → <code>downloadFile</code>
+          </p>
+        </div>
+
+        <div class="page-content">
+          <h2>Что внутри комплекта</h2>
+          <ul>
+            <li>Шаблон для выреза в керамограните</li>
+            <li>Инструкция по монтажу (электрик + плиточник)</li>
+            <li>Технические параметры: толщина 6–20 мм, пост 71 мм</li>
+            <li>Рекомендации для кухни и ванной</li>
+          </ul>
+          <h2>Нужна консультация?</h2>
+          <p>Напишите в Telegram или WhatsApp — ответим быстрее, чем по телефону.</p>
+          <div class="contacts-buttons" style="justify-content:flex-start;margin-top:1rem">
+            <a id="contact-telegram" href="#" class="btn btn-messenger btn-telegram" target="_blank" rel="noopener">Telegram</a>
+            <a id="contact-whatsapp" href="#" class="btn btn-messenger btn-whatsapp" target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p class="footer-logo" data-brand>WaverStore</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Главная</a>
+        <a href="gallery.html">Галерея</a>
+        <a href="offer.html">Оферта</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/layout.js"></script>
+  <script>
+    (function () {
+      const c = window.WAVER_CONFIG || {};
+      const btn = document.getElementById("download-btn");
+      if (btn && c.downloadFile) {
+        btn.href = c.downloadFile;
+        btn.textContent = c.downloadLabel || "Скачать комплект →";
+      }
+    })();
+  </script>
+</body>
+</html>
