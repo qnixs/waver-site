@@ -31,28 +31,17 @@
       <div class="container">
         <p class="eyebrow">Документация</p>
         <h1>Скачать комплект</h1>
-        <p class="section-lead">Шаблон для реза, инструкция по монтажу и спецификация — всё для мастера и плиточника.</p>
+        <p class="section-lead">Инструкции, шаблоны и видео — всё для монтажа. Скачивайте нужные файлы отдельно.</p>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
-        <div class="download-box">
-          <p><strong>Комплект WaverStore (PDF)</strong><br>Шаблон, инструкция, технические параметры</p>
-          <a id="download-btn" href="#" class="btn btn-primary" download>Скачать комплект →</a>
-          <p class="section-lead" style="margin-top:1.25rem;font-size:0.8125rem">
-            Положи свой PDF в папку <code>files/</code> и укажи путь в <code>js/config.js</code> → <code>downloadFile</code>
-          </p>
-        </div>
+        <div class="download-list" id="download-list"></div>
 
         <div class="page-content">
-          <h2>Что внутри комплекта</h2>
-          <ul>
-            <li>Шаблон для выреза в керамограните</li>
-            <li>Инструкция по монтажу (электрик + плиточник)</li>
-            <li>Технические параметры: толщина 6–20 мм, пост 71 мм</li>
-            <li>Рекомендации для кухни и ванной</li>
-          </ul>
+          <h2>Как добавить свои файлы</h2>
+          <p>Положи PDF в папку <code>files/</code> и пропиши в <code>js/config.js</code> → <code>downloads</code>. Для видео укажи ссылку YouTube в поле <code>url</code>.</p>
           <h2>Нужна консультация?</h2>
           <p>Напишите в Telegram или WhatsApp — ответим быстрее, чем по телефону.</p>
           <div class="contacts-buttons" style="justify-content:flex-start;margin-top:1rem">
@@ -82,11 +71,28 @@
   <script>
     (function () {
       const c = window.WAVER_CONFIG || {};
-      const btn = document.getElementById("download-btn");
-      if (btn && c.downloadFile) {
-        btn.href = c.downloadFile;
-        btn.textContent = c.downloadLabel || "Скачать комплект →";
-      }
+      const list = document.getElementById("download-list");
+      const items = c.downloads || [];
+      if (!list) return;
+
+      list.innerHTML = items.map((item) => {
+        const isSoon = item.soon || (item.type === "video" && !item.url);
+        const href = item.type === "video" ? item.url : item.file;
+        const btn = isSoon
+          ? `<span class="badge-soon">Скоро</span>`
+          : item.type === "video"
+            ? `<a href="${href}" class="btn btn-outline" target="_blank" rel="noopener">Смотреть →</a>`
+            : `<a href="${href}" class="btn btn-primary" download>Скачать PDF →</a>`;
+        return `
+          <article class="download-card${isSoon ? " soon" : ""}">
+            <div>
+              <h3>${item.label}</h3>
+              <p>${item.desc || ""}</p>
+            </div>
+            ${btn}
+          </article>
+        `;
+      }).join("");
     })();
   </script>
 </body>

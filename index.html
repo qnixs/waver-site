@@ -18,6 +18,7 @@
         <div class="nav-links">
           <a href="#about">О продукте</a>
           <a href="#catalog">Каталог</a>
+          <a href="#kit">Комплект</a>
           <a href="#prices">Цены</a>
           <a href="gallery.html">Галерея</a>
           <a href="download.html">Скачать</a>
@@ -119,7 +120,7 @@
           <article class="catalog-card">
             <span class="badge-stock">В наличии</span>
             <h3>Розетка скрытая, 1 пост</h3>
-            <p>арт. 3028910163 · чёрный · шаблон для реза в комплекте</p>
+            <p>Белый · шаблон для реза в комплекте</p>
             <a href="#order" class="btn btn-outline" style="margin-top:0.5rem;width:fit-content;padding:0.5rem 1rem;font-size:0.8125rem">Заказать</a>
           </article>
           <article class="catalog-card">
@@ -138,11 +139,23 @@
       </div>
     </section>
 
-    <section class="section" id="gallery-preview-section">
+    <section class="section" id="kit">
+      <div class="container">
+        <p class="eyebrow">Комплектация</p>
+        <h2>Что входит в комплект</h2>
+        <p class="section-lead">Всё необходимое для монтажа — отдельно для розетки и выключателя.</p>
+        <div class="kit-grid" id="kit-contents"></div>
+        <div style="margin-top:1.25rem">
+          <a href="download.html" class="btn btn-outline">Скачать инструкции и шаблоны →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-white" id="gallery-preview-section">
       <div class="container">
         <p class="eyebrow">Галерея</p>
         <h2>Фото и примеры монтажа</h2>
-        <p class="section-lead">Положи свои фото в папку <code>images/gallery/</code> — они появятся автоматически.</p>
+        <p class="section-lead">Реальные изделия WaverStore — розетки заподлицо и блоки из нескольких постов.</p>
         <div class="gallery-preview" id="gallery-preview"></div>
         <div style="margin-top:1.25rem">
           <a href="gallery.html" class="btn btn-outline">Смотреть всю галерею →</a>
@@ -156,30 +169,34 @@
           <p class="eyebrow">Цены</p>
           <h2>Чем больше партия — тем ниже цена</h2>
           <p class="section-lead">
-            Розница от 5 000 ₽/шт. Тариф мастера включается в форме заказа — скидка применяется автоматически.
+            Розница от 5 000 ₽/шт. Скидка по сумме всех позиций в заказе — можно взять и розетки, и выключатели сразу.
           </p>
         </div>
         <div class="price-table-wrap">
           <table class="price-table">
             <tbody>
               <tr>
-                <td>Розница, 1–9 шт</td>
+                <td>Розница, 1–4 шт</td>
                 <td>5&nbsp;000 ₽</td>
               </tr>
               <tr>
-                <td>Мастера и плиточники, 1–9 шт</td>
+                <td>Мастера, 1–4 шт</td>
                 <td>4&nbsp;620 ₽</td>
               </tr>
               <tr class="highlight">
-                <td>От 10 штук <span class="badge">популярно</span></td>
+                <td>От 5 штук <span class="badge">популярно</span></td>
                 <td>4&nbsp;400 ₽</td>
               </tr>
               <tr>
-                <td>От 20 штук</td>
+                <td>От 10 штук</td>
                 <td>4&nbsp;150 ₽</td>
               </tr>
               <tr>
-                <td>От 30 штук · −21%</td>
+                <td>От 20 штук</td>
+                <td>4&nbsp;000 ₽</td>
+              </tr>
+              <tr>
+                <td>От 30 штук</td>
                 <td>3&nbsp;940 ₽</td>
               </tr>
             </tbody>
@@ -193,38 +210,15 @@
         <p class="eyebrow">Заказ</p>
         <h2>Оформите заказ за минуту</h2>
         <p class="section-lead">
-          Выберите изделие, количество и доставку. Мы ответим в Telegram или WhatsApp — звонить не обязательно.
+          Укажите количество розеток и выключателей в одном заказе. Скидка считается по общему числу штук.
         </p>
 
         <form id="order-form" class="order-grid" novalidate>
           <div>
             <div class="order-form-card">
-              <h3>1 · Изделие и количество</h3>
-              <div class="product-picks">
-                <button type="button" class="product-pick selected" data-product="socket">
-                  <strong>Розетка скрытая, 1 пост</strong>
-                  <span>арт. 3028910163 · чёрный · в наличии</span>
-                </button>
-                <button type="button" class="product-pick" data-product="switch1">
-                  <strong>Выключатель одноклавишный, 1 пост</strong>
-                  <span>заподлицо в керамограните · в наличии</span>
-                </button>
-                <button type="button" class="product-pick disabled" data-product="switch2" disabled>
-                  <strong>Выключатель двухклавишный</strong>
-                  <span>скоро в продаже — укажите в комментарии, если нужен</span>
-                </button>
-              </div>
-              <div class="product-row">
-                <div>
-                  <p><strong>Количество</strong></p>
-                  <p class="sub">Цена пересчитается автоматически</p>
-                </div>
-                <div class="qty-control">
-                  <button type="button" class="qty-btn" id="qty-minus" aria-label="меньше">−</button>
-                  <input type="number" class="qty-input" id="qty" name="quantity" min="1" max="999" value="5">
-                  <button type="button" class="qty-btn" id="qty-plus" aria-label="больше">+</button>
-                </div>
-              </div>
+              <h3>1 · Состав заказа</h3>
+              <p class="order-hint">Пример: 20 розеток + 5 выключателей = 25 шт → цена «от 20 шт»</p>
+              <div class="line-items" id="line-items"></div>
 
               <div class="master-card" id="master-card">
                 <div class="master-info">
@@ -323,10 +317,12 @@
             </div>
             <p class="summary-note">+ доставка по тарифу службы</p>
 
-            <input type="hidden" name="product" id="hidden-product" value="Розетка скрытая, 1 пост">
+            <input type="hidden" name="order_summary" id="hidden-order-summary">
             <input type="hidden" name="unit_price" id="hidden-unit-price">
             <input type="hidden" name="total" id="hidden-total">
+            <input type="hidden" name="total_qty" id="hidden-total-qty">
             <input type="hidden" name="tariff" id="hidden-tariff">
+            <input type="hidden" name="tier" id="hidden-tier">
             <input type="hidden" name="savings" id="hidden-savings">
             <input type="hidden" name="_subject" value="Новый заказ WaverStore">
             <input type="hidden" name="_language" value="ru">
@@ -363,6 +359,10 @@
         <p class="eyebrow">FAQ</p>
         <h2 style="max-width:none">Вопросы и ответы</h2>
         <div class="faq-list">
+          <div class="faq-item">
+            <button type="button" class="faq-question">Можно заказать розетки и выключатели вместе?<span>+</span></button>
+            <div class="faq-answer">Да. Укажите количество каждой позиции в одном заказе — скидка считается по сумме всех штук. Например, 10 розеток + 5 выключателей = 15 шт, цена «от 10 шт».</div>
+          </div>
           <div class="faq-item">
             <button type="button" class="faq-question">Что такое скрытые розетки WaverStore?<span>+</span></button>
             <div class="faq-answer">Механизм утоплен в керамогранит — снаружи только ровная плоскость плитки, без рамок и выступов. Подходит для премиум-интерьера.</div>

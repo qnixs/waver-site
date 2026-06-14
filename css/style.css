@@ -525,6 +525,66 @@ textarea { min-height: 5rem; resize: vertical; }
   .gallery-page-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
+/* Line items in order */
+.line-items { display: grid; gap: 0.5rem; }
+.order-hint {
+  margin: 0 0 0.75rem;
+  font-size: 0.75rem;
+  color: var(--muted-light);
+  padding: 0.625rem 0.75rem;
+  background: var(--bg);
+  border-radius: 0.5rem;
+  border: 1px solid var(--border);
+}
+.line-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.875rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  background: var(--white);
+}
+.line-item.disabled { opacity: 0.6; background: var(--bg); }
+.line-item-info { flex: 1; min-width: 10rem; }
+.line-item-info strong { display: block; font-size: 0.875rem; }
+.line-item-info span { display: block; margin-top: 0.15rem; font-size: 0.75rem; color: var(--muted-light); }
+
+/* Kit contents */
+.kit-grid { display: grid; gap: 1rem; margin-top: 1.5rem; }
+.kit-card {
+  border: 1px solid var(--border-card);
+  border-radius: 1rem;
+  background: var(--white);
+  padding: 1.25rem;
+}
+.kit-card h3 { margin: 0 0 0.75rem; font-size: 1.0625rem; }
+.kit-card ul { margin: 0; padding-left: 1.125rem; font-size: 0.875rem; color: var(--muted); }
+.kit-card li { margin-bottom: 0.35rem; }
+
+/* Download list */
+.download-list { display: grid; gap: 0.75rem; }
+.download-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem;
+  border: 1px solid var(--border-card);
+  border-radius: 1rem;
+  background: var(--white);
+}
+.download-card.soon { opacity: 0.75; }
+.download-card h3 { margin: 0; font-size: 1rem; }
+.download-card p { margin: 0.25rem 0 0; font-size: 0.8125rem; color: var(--muted); }
+
+@media (min-width: 768px) {
+  .kit-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
 @media (min-width: 1024px) {
   .hero-grid { grid-template-columns: 1fr 1.1fr; padding: 4rem 0; }
   .cards-3 { grid-template-columns: repeat(3, 1fr); }
