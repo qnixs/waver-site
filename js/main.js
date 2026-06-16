@@ -226,7 +226,7 @@
       form.method = "POST";
     }
     const nextField = document.getElementById("form-next");
-    if (nextField) nextField.value = new URL("thanks.html", window.location.href).href;
+    if (nextField) nextField.value = new URL("/thanks/", window.location.origin).href;
 
     form.addEventListener("submit", (e) => {
       const error = validateForm();
@@ -247,7 +247,7 @@
     const images = config.galleryImages || [];
     if (!grid || images.length === 0) return;
     grid.innerHTML = images.map((img) => `
-      <a href="gallery.html" class="gallery-preview-item">
+      <a href="/gallery" class="gallery-preview-item">
         <img src="${img.src}" alt="${img.alt || ""}" loading="lazy">
         <span>${img.caption || ""}</span>
       </a>

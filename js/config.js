@@ -3,7 +3,10 @@
 // ═══════════════════════════════════════════════════════════
 window.WAVER_CONFIG = {
   brand: "WAVER STORE",
+  logo: "/images/logo.png",
 
+  // Formspree ID — это не пароль, а публичный адрес формы (как номер телефона).
+  // Его всё равно видно в коде страницы. Защита — на стороне Formspree (спам-фильтр).
   formspreeId: "xqeoggwp",
 
   telegram: "https://t.me/tontreader",
@@ -11,34 +14,49 @@ window.WAVER_CONFIG = {
   whatsapp: "https://wa.me/79959342806",
   whatsappLabel: "Написать в WhatsApp",
 
-  // ── ФОТО (сейчас 2 шт — добавляй по мере готовности) ──
+  // ── ЯНДЕКС.КАРТЫ ──
+  // 1. developer.tech.yandex.ru → «JavaScript API и HTTP Геокодер» → получить ключ
+  // 2. В настройках ключа ограничь HTTP Referer: waverstore.site, qnixs.github.io
+  // 3. Вставь ключ ниже. Ключ в браузере виден — это нормально при ограничении по домену.
+  // 4. Координаты: Яндекс.Карты → нужная точка → ПКМ → «Что здесь?» → скопируй [широта, долгота]
+  yandexMaps: {
+    apiKey: "",
+    center: [57.1522, 65.5272],
+    zoom: 16,
+    marker: {
+      coords: [57.1522, 65.5272],
+      title: "WaverStore",
+      hint: "Производство",
+      balloon: "WaverStore — производство скрытых розеток<br>г. Тюмень",
+    },
+  },
+
   heroImages: [
-    { src: "images/hero/01.jpg", alt: "Скрытая розетка заподлицо в керамограните" },
-    { src: "images/hero/02.jpg", alt: "Блок из 2 постов — розетка и выключатель" },
+    { src: "/images/hero/01.jpg", alt: "Скрытая розетка заподлицо в керамограните" },
+    { src: "/images/hero/02.jpg", alt: "Блок из 2 постов — розетка и выключатель" },
   ],
 
   galleryImages: [
-    { src: "images/gallery/01.jpg", alt: "Розетка заподлицо", caption: "Розетка заподлицо" },
-    { src: "images/gallery/02.jpg", alt: "Блок из 2 постов", caption: "Розетка и выключатель — блок из 2 постов" },
+    { src: "/images/gallery/01.jpg", alt: "Розетка заподлицо", caption: "Розетка заподлицо" },
+    { src: "/images/gallery/02.jpg", alt: "Блок из 2 постов", caption: "Розетка и выключатель — блок из 2 постов" },
   ],
 
-  // ── ФАЙЛЫ ДЛЯ СКАЧИВАНИЯ (положи в files/) ──
   downloads: [
     {
       type: "pdf",
-      file: "files/instrukciya-montazh.pdf",
+      file: "/files/instrukciya-montazh.pdf",
       label: "Инструкция по монтажу",
       desc: "Пошаговая установка для электрика и плиточника",
     },
     {
       type: "pdf",
-      file: "files/shablon-reza.pdf",
+      file: "/files/shablon-reza.pdf",
       label: "Шаблон для реза",
       desc: "PDF-шаблон для точного выреза в плитке",
     },
     {
       type: "pdf",
-      file: "files/specifikaciya.pdf",
+      file: "/files/specifikaciya.pdf",
       label: "Спецификация и параметры",
       desc: "Технические характеристики, размеры, комплектация",
     },
@@ -51,7 +69,6 @@ window.WAVER_CONFIG = {
     },
   ],
 
-  // ── ЧТО ВХОДИТ В КОМПЛЕКТ ──
   kitContents: [
     {
       title: "Розетка скрытая, 1 пост",
@@ -75,7 +92,6 @@ window.WAVER_CONFIG = {
     },
   ],
 
-  // ── ТОВАРЫ В ЗАКАЗЕ ──
   orderProducts: [
     {
       id: "socket",
@@ -103,7 +119,6 @@ window.WAVER_CONFIG = {
     },
   ],
 
-  // ── ЦЕНЫ (скидка считается по СУММЕ всех позиций в заказе) ──
   prices: {
     retail: { 1: 5000, 5: 5000, 10: 5000, 20: 5000, 30: 5000 },
     master: { 1: 4620, 5: 4400, 10: 4150, 20: 4000, 30: 3940 },

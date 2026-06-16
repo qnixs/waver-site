@@ -8,20 +8,20 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a href="index.html" class="logo" data-brand>WaverStore</a>
+      <a href="/" class="logo" id="site-logo"></a>
       <nav class="nav">
         <div class="nav-links">
           <a href="#about">О продукте</a>
           <a href="#catalog">Каталог</a>
           <a href="#kit">Комплект</a>
           <a href="#prices">Цены</a>
-          <a href="gallery.html">Галерея</a>
-          <a href="download.html">Скачать</a>
+          <a href="/gallery">Галерея</a>
+          <a href="/download">Скачать</a>
           <a href="#faq">FAQ</a>
         </div>
         <a href="#order" class="btn btn-dark">Заказать</a>
@@ -34,10 +34,10 @@
     <a href="#about">О продукте</a>
     <a href="#catalog">Каталог</a>
     <a href="#prices">Цены</a>
-    <a href="gallery.html">Галерея</a>
-    <a href="download.html">Скачать комплект</a>
+    <a href="/gallery">Галерея</a>
+    <a href="/download">Скачать комплект</a>
     <a href="#faq">FAQ</a>
-    <a href="offer.html">Оферта</a>
+    <a href="/offer">Оферта</a>
     <a href="#order">Оформить заказ</a>
   </nav>
 
@@ -59,7 +59,7 @@
           </ul>
           <div class="hero-actions">
             <a href="#order" class="btn btn-primary">Оформить заказ</a>
-            <a href="download.html" class="btn btn-outline">Скачать комплект</a>
+            <a href="/download" class="btn btn-outline">Скачать комплект</a>
           </div>
         </div>
         <div class="carousel" id="hero-carousel" aria-label="Фотографии продукта"></div>
@@ -146,7 +146,7 @@
         <p class="section-lead">Всё необходимое для монтажа — отдельно для розетки и выключателя.</p>
         <div class="kit-grid" id="kit-contents"></div>
         <div style="margin-top:1.25rem">
-          <a href="download.html" class="btn btn-outline">Скачать инструкции и шаблоны →</a>
+          <a href="/download" class="btn btn-outline">Скачать инструкции и шаблоны →</a>
         </div>
       </div>
     </section>
@@ -158,7 +158,7 @@
         <p class="section-lead">Реальные изделия WaverStore — розетки заподлицо и блоки из нескольких постов.</p>
         <div class="gallery-preview" id="gallery-preview"></div>
         <div style="margin-top:1.25rem">
-          <a href="gallery.html" class="btn btn-outline">Смотреть всю галерею →</a>
+          <a href="/gallery" class="btn btn-outline">Смотреть всю галерею →</a>
         </div>
       </div>
     </section>
@@ -331,7 +331,7 @@
             <button type="submit" class="btn btn-accent" id="submit-btn">Оформить заказ →</button>
             <p class="form-note">
               Заявка, не оплата. Подтвердим в мессенджере и пришлём счёт.
-              <a href="offer.html" style="color:#c9c4bc;text-decoration:underline">Оферта</a>
+              <a href="/offer" style="color:#c9c4bc;text-decoration:underline">Оферта</a>
             </p>
             <p class="form-error" id="form-error"></p>
           </aside>
@@ -350,7 +350,15 @@
           <a id="contact-telegram" href="#" class="btn btn-messenger btn-telegram" target="_blank" rel="noopener">✈️ Telegram</a>
           <a id="contact-whatsapp" href="#" class="btn btn-messenger btn-whatsapp" target="_blank" rel="noopener">💬 WhatsApp</a>
         </div>
-        <p style="margin-top:1.5rem;font-size:0.875rem;color:var(--muted)">📍 Производство: г. Тюмень</p>
+        <p class="contacts-address" id="contacts-address">📍 Производство: г. Тюмень</p>
+        <div class="map-wrap">
+          <div id="yandex-map" class="yandex-map" aria-label="Карта — производство WaverStore"></div>
+          <div id="map-placeholder" class="map-placeholder" hidden>
+            <p><strong>Карта появится после настройки</strong></p>
+            <p class="map-placeholder-hint" data-map-key-hint>Вставь API-ключ Яндекс.Карт в <code>js/config.js</code> → <code>yandexMaps.apiKey</code></p>
+          </div>
+        </div>
+        <a id="map-open-yandex" class="map-open-link" href="#" target="_blank" rel="noopener" hidden>Открыть в Яндекс.Картах →</a>
       </div>
     </section>
 
@@ -404,9 +412,9 @@
       </div>
       <div>
         <div class="footer-links">
-          <a href="gallery.html">Галерея</a>
-          <a href="download.html">Скачать</a>
-          <a href="offer.html">Оферта</a>
+          <a href="/gallery">Галерея</a>
+          <a href="/download">Скачать</a>
+          <a href="/offer">Оферта</a>
           <a href="#order">Заказать</a>
         </div>
         <p style="margin-top:0.75rem;font-size:0.75rem">© <span data-brand>WaverStore</span></p>
@@ -414,10 +422,11 @@
     </div>
   </footer>
 
-  <script src="js/config.js"></script>
-  <script src="js/layout.js"></script>
-  <script src="js/carousel.js"></script>
-  <script src="js/main.js"></script>
+  <script src="/js/config.js"></script>
+  <script src="/js/layout.js"></script>
+  <script src="/js/carousel.js"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/map.js"></script>
   <script>
     document.getElementById("menu-btn")?.addEventListener("click", () => {
       document.getElementById("mobile-nav").classList.toggle("open");

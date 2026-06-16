@@ -8,21 +8,21 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a href="index.html" class="logo" data-brand>WaverStore</a>
+      <a href="/" class="logo" id="site-logo"></a>
       <nav class="nav">
         <div class="nav-links">
-          <a href="index.html#about">О продукте</a>
-          <a href="index.html#catalog">Каталог</a>
-          <a href="index.html#prices">Цены</a>
-          <a href="gallery.html" class="active">Галерея</a>
-          <a href="download.html">Скачать</a>
+          <a href="/#about">О продукте</a>
+          <a href="/#catalog">Каталог</a>
+          <a href="/#prices">Цены</a>
+          <a href="/gallery">Галерея</a>
+          <a href="/download">Скачать</a>
         </div>
-        <a href="index.html#order" class="btn btn-dark">Заказать</a>
+        <a href="/#order" class="btn btn-dark">Заказать</a>
       </nav>
     </div>
   </header>
@@ -39,12 +39,9 @@
     <section class="section">
       <div class="container">
         <div class="gallery-page-grid" id="gallery-full"></div>
-        <p class="section-lead" style="margin-top:2rem;font-size:0.8125rem">
-          Добавить фото: положи в <code>images/gallery/</code> и пропиши в <code>js/config.js</code> → <code>galleryImages</code>
-        </p>
         <div style="margin-top:1.5rem;display:flex;gap:0.75rem;flex-wrap:wrap">
-          <a href="index.html#order" class="btn btn-primary">Оформить заказ</a>
-          <a href="index.html" class="btn btn-outline">На главную</a>
+          <a href="/#order" class="btn btn-primary">Оформить заказ</a>
+          <a href="/" class="btn btn-outline">На главную</a>
         </div>
       </div>
     </section>
@@ -57,15 +54,15 @@
         <p>📍 Производство: г. Тюмень</p>
       </div>
       <div class="footer-links">
-        <a href="index.html">Главная</a>
-        <a href="download.html">Скачать</a>
-        <a href="offer.html">Оферта</a>
+        <a href="/">Главная</a>
+        <a href="/download">Скачать</a>
+        <a href="/offer">Оферта</a>
       </div>
     </div>
   </footer>
 
-  <script src="js/config.js"></script>
-  <script src="js/layout.js"></script>
+  <script src="/js/config.js"></script>
+  <script src="/js/layout.js"></script>
   <script>
     (function () {
       const images = (window.WAVER_CONFIG || {}).galleryImages || [];

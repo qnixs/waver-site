@@ -8,20 +8,20 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a href="index.html" class="logo" data-brand>WaverStore</a>
+      <a href="/" class="logo" id="site-logo"></a>
       <nav class="nav">
         <div class="nav-links">
-          <a href="index.html#about">О продукте</a>
-          <a href="gallery.html">Галерея</a>
-          <a href="download.html" class="active">Скачать</a>
-          <a href="index.html#order">Заказать</a>
+          <a href="/#about">О продукте</a>
+          <a href="/gallery">Галерея</a>
+          <a href="/download">Скачать</a>
+          <a href="/#order">Заказать</a>
         </div>
-        <a href="index.html#order" class="btn btn-dark">Заказать</a>
+        <a href="/#order" class="btn btn-dark">Заказать</a>
       </nav>
     </div>
   </header>
@@ -40,8 +40,6 @@
         <div class="download-list" id="download-list"></div>
 
         <div class="page-content">
-          <h2>Как добавить свои файлы</h2>
-          <p>Положи PDF в папку <code>files/</code> и пропиши в <code>js/config.js</code> → <code>downloads</code>. Для видео укажи ссылку YouTube в поле <code>url</code>.</p>
           <h2>Нужна консультация?</h2>
           <p>Напишите в Telegram или WhatsApp — ответим быстрее, чем по телефону.</p>
           <div class="contacts-buttons" style="justify-content:flex-start;margin-top:1rem">
@@ -59,15 +57,15 @@
         <p class="footer-logo" data-brand>WaverStore</p>
       </div>
       <div class="footer-links">
-        <a href="index.html">Главная</a>
-        <a href="gallery.html">Галерея</a>
-        <a href="offer.html">Оферта</a>
+        <a href="/">Главная</a>
+        <a href="/gallery">Галерея</a>
+        <a href="/offer">Оферта</a>
       </div>
     </div>
   </footer>
 
-  <script src="js/config.js"></script>
-  <script src="js/layout.js"></script>
+  <script src="/js/config.js"></script>
+  <script src="/js/layout.js"></script>
   <script>
     (function () {
       const c = window.WAVER_CONFIG || {};
