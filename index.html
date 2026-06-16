@@ -259,6 +259,23 @@
                 </button>
               </div>
               <input type="hidden" name="delivery" id="delivery-value" value="Ozon Delivery">
+
+              <div id="delivery-map-block" class="delivery-map-block">
+                <p class="delivery-map-hint">
+                  Нажмите на карту в нужном месте или начните вводить адрес / «ПВЗ Ozon» — подставим город и адрес в форму.
+                  Точный пункт выдачи Ozon, СДЭК или Boxberry уточните в названии адреса.
+                </p>
+                <div id="delivery-map" class="yandex-map yandex-map--form" aria-label="Выбор адреса доставки на карте"></div>
+                <div id="delivery-map-placeholder" class="map-placeholder" hidden>
+                  <p>Карта недоступна — укажите город и адрес ПВЗ вручную.</p>
+                </div>
+                <p class="delivery-map-selected" id="delivery-map-selected" aria-live="polite"></p>
+              </div>
+
+              <div id="delivery-pickup-block" class="delivery-pickup-note" hidden>
+                <p><strong>Самовывоз:</strong> <span data-pickup-address>г. Тюмень, производство WaverStore</span></p>
+              </div>
+
               <div class="field-grid two-cols">
                 <div>
                   <label for="city">Город</label>
@@ -266,9 +283,10 @@
                 </div>
                 <div>
                   <label for="address">Адрес или ПВЗ</label>
-                  <input id="address" name="address" placeholder="ул. Ленина 5, ПВЗ Ozon" maxlength="300">
+                  <input id="address" name="address" placeholder="ПВЗ Ozon, ул. Ленина 5" maxlength="300">
                 </div>
               </div>
+              <input type="hidden" name="delivery_coords" id="delivery-coords" value="">
             </div>
 
             <div class="order-form-card">
@@ -350,15 +368,7 @@
           <a id="contact-telegram" href="#" class="btn btn-messenger btn-telegram" target="_blank" rel="noopener">✈️ Telegram</a>
           <a id="contact-whatsapp" href="#" class="btn btn-messenger btn-whatsapp" target="_blank" rel="noopener">💬 WhatsApp</a>
         </div>
-        <p class="contacts-address" id="contacts-address">📍 Производство: г. Тюмень</p>
-        <div class="map-wrap">
-          <div id="yandex-map" class="yandex-map" aria-label="Карта — производство WaverStore"></div>
-          <div id="map-placeholder" class="map-placeholder" hidden>
-            <p><strong>Карта появится после настройки</strong></p>
-            <p class="map-placeholder-hint" data-map-key-hint>Вставь API-ключ Яндекс.Карт в <code>js/config.js</code> → <code>yandexMaps.apiKey</code></p>
-          </div>
-        </div>
-        <a id="map-open-yandex" class="map-open-link" href="#" target="_blank" rel="noopener" hidden>Открыть в Яндекс.Картах →</a>
+        <p class="contacts-address">📍 Производство: г. Тюмень</p>
       </div>
     </section>
 

@@ -56,6 +56,10 @@
     waHero.href = config.whatsapp;
   }
 
+  document.querySelectorAll("[data-pickup-address]").forEach((el) => {
+    if (config.pickupAddress) el.textContent = config.pickupAddress;
+  });
+
   function normalizePath(value) {
     return value.replace(/\/index\.html$/, "").replace(/\/$/, "") || "/";
   }

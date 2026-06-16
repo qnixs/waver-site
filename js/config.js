@@ -5,8 +5,7 @@ window.WAVER_CONFIG = {
   brand: "WAVER STORE",
   logo: "/images/logo.png",
 
-  // Formspree ID — это не пароль, а публичный адрес формы (как номер телефона).
-  // Его всё равно видно в коде страницы. Защита — на стороне Formspree (спам-фильтр).
+  // Formspree ID — публичный адрес формы, не пароль.
   formspreeId: "xqeoggwp",
 
   telegram: "https://t.me/tontreader",
@@ -14,22 +13,18 @@ window.WAVER_CONFIG = {
   whatsapp: "https://wa.me/79959342806",
   whatsappLabel: "Написать в WhatsApp",
 
-  // ── ЯНДЕКС.КАРТЫ ──
-  // 1. developer.tech.yandex.ru → «JavaScript API и HTTP Геокодер» → получить ключ
-  // 2. В настройках ключа ограничь HTTP Referer: waverstore.site, qnixs.github.io
-  // 3. Вставь ключ ниже. Ключ в браузере виден — это нормально при ограничении по домену.
-  // 4. Координаты: Яндекс.Карты → нужная точка → ПКМ → «Что здесь?» → скопируй [широта, долгота]
+  // ── ЯНДЕКС.КАРТЫ (выбор адреса / ПВЗ в форме заказа) ──
+  // developer.tech.yandex.ru → «JavaScript API и HTTP Геокодер»
+  // Ограничь ключ по HTTP Referer: waverstore.site, qnixs.github.io
   yandexMaps: {
-    apiKey: "",
-    center: [57.1522, 65.5272],
-    zoom: 16,
-    marker: {
-      coords: [57.1522, 65.5272],
-      title: "WaverStore",
-      hint: "Производство",
-      balloon: "WaverStore — производство скрытых розеток<br>г. Тюмень",
-    },
+    apiKey: "c0567da7-de5e-4a15-b3f5-2193b515bbc1",
+    // Стартовый центр карты, если геолокация недоступна [широта, долгота]
+    defaultCenter: [57.1522, 65.5272],
+    defaultZoom: 11,
   },
+
+  // Адрес самовывоза — показывается при выборе «Самовывоз, Тюмень»
+  pickupAddress: "г. Тюмень, производство WaverStore",
 
   heroImages: [
     { src: "/images/hero/01.jpg", alt: "Скрытая розетка заподлицо в керамограните" },
