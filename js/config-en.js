@@ -16,7 +16,7 @@ window.WAVER_CONFIG = {
   seo: {
     siteUrl: "https://waverstore.site",
     googleSiteVerification: "",
-    yandexVerification: "",
+    yandexVerification: "8bb05e284e152a2e",
     ogImage: "/images/hero/01.jpg",
   },
 
