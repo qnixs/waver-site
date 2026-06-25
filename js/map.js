@@ -24,7 +24,7 @@
 
   function isPickupMode() {
     const value = document.getElementById("delivery-value")?.value || "";
-    return value.indexOf("Самовывоз") !== -1;
+    return /Самовывоз|Pickup/i.test(value);
   }
 
   function updateDeliveryUi() {

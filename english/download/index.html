@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Скачать — WAVER STORE</title>
-  <meta name="description" content="Скачать инструкцию по монтажу WAVER STORE — скрытые розетки заподлицо в керамограните.">
+  <title>Downloads — WAVER STORE</title>
+  <meta name="description" content="Download WAVER STORE installation manual for flush-mounted sockets in porcelain stoneware.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -13,11 +13,11 @@
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a href="/" class="logo" id="site-logo"></a>
+      <a href="/english/" class="logo" id="site-logo"></a>
       <nav class="nav">
         <div class="nav-links"></div>
-        <a href="/#order" class="btn btn-dark">Заказать</a>
-        <button type="button" class="menu-btn" id="menu-btn" aria-label="Меню">☰</button>
+        <a href="/english/#order" class="btn btn-dark">Order</a>
+        <button type="button" class="menu-btn" id="menu-btn" aria-label="Menu">☰</button>
       </nav>
     </div>
   </header>
@@ -25,17 +25,17 @@
   <main>
     <section class="page-hero">
       <div class="container">
-        <p class="eyebrow">Документация</p>
-        <h1>Скачать</h1>
-        <p class="section-lead">Инструкция по монтажу и другие материалы для установки.</p>
+        <p class="eyebrow">Documentation</p>
+        <h1>Downloads</h1>
+        <p class="section-lead">Installation manual and other materials for mounting.</p>
       </div>
     </section>
     <section class="section">
       <div class="container">
         <div class="download-list" id="download-list"></div>
         <div class="page-content">
-          <h2>Нужна консультация?</h2>
-          <p>Напишите в Telegram или WhatsApp — ответим быстрее, чем по телефону.</p>
+          <h2>Need advice?</h2>
+          <p>Message us on Telegram or WhatsApp — we reply faster than by phone.</p>
           <div class="contacts-buttons" style="justify-content:flex-start;margin-top:1rem">
             <a id="contact-telegram" href="#" class="btn btn-messenger btn-telegram" target="_blank" rel="noopener">Telegram</a>
             <a id="contact-whatsapp" href="#" class="btn btn-messenger btn-whatsapp" target="_blank" rel="noopener">WhatsApp</a>
@@ -49,15 +49,15 @@
       <div><p class="footer-logo" data-brand>WAVER STORE</p></div>
       <div>
         <div class="footer-links">
-          <a href="/">Главная</a>
-          <a href="/gallery">Галерея</a>
-          <a href="/offer">Оферта</a>
+          <a href="/english/">Home</a>
+          <a href="/english/gallery">Gallery</a>
+          <a href="/english/offer">Terms</a>
         </div>
         <p class="lang-switch" data-lang-switch></p>
       </div>
     </div>
   </footer>
-  <script src="/js/config.js"></script>
+  <script src="/js/config-en.js"></script>
   <script src="/js/layout.js"></script>
   <script>
     (function () {
@@ -69,10 +69,10 @@
         const isSoon = item.soon || (item.type === "video" && !item.url);
         const href = item.type === "video" ? item.url : item.file;
         const btn = isSoon
-          ? `<span class="badge-soon">Скоро</span>`
+          ? `<span class="badge-soon">Soon</span>`
           : item.type === "video"
-            ? `<a href="${href}" class="btn btn-outline" target="_blank" rel="noopener">Смотреть →</a>`
-            : `<a href="${href}" class="btn btn-primary" download>Скачать PDF →</a>`;
+            ? `<a href="${href}" class="btn btn-outline" target="_blank" rel="noopener">Watch →</a>`
+            : `<a href="${href}" class="btn btn-primary" download>Download PDF →</a>`;
         return `<article class="download-card${isSoon ? " soon" : ""}"><div><h3>${item.label}</h3><p>${item.desc || ""}</p></div>${btn}</article>`;
       }).join("");
     })();

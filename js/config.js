@@ -3,7 +3,7 @@
 // ═══════════════════════════════════════════════════════════
 window.WAVER_CONFIG = {
   brand: "WAVER STORE",
-  logo: "/images/logo.png",
+  logo: "",
 
   // Formspree ID — публичный адрес формы, не пароль.
   formspreeId: "xqeoggwp",
@@ -24,7 +24,7 @@ window.WAVER_CONFIG = {
   },
 
   // Адрес самовывоза — показывается при выборе «Самовывоз, Тюмень»
-  pickupAddress: "г. Тюмень, производство WaverStore",
+  pickupAddress: "г. Тюмень, производство WAVER STORE",
 
   heroImages: [
     { src: "/images/hero/01.jpg", alt: "Скрытая розетка заподлицо в керамограните" },
@@ -50,16 +50,10 @@ window.WAVER_CONFIG = {
       desc: "PDF-шаблон для точного выреза в плитке",
     },
     {
-      type: "pdf",
-      file: "/files/specifikaciya.pdf",
-      label: "Спецификация и параметры",
-      desc: "Технические характеристики, размеры, комплектация",
-    },
-    {
       type: "video",
       url: "",
       label: "Видео монтажа",
-      desc: "Скоро — укажи ссылку на YouTube или файл в config.js",
+      desc: "Скоро",
       soon: true,
     },
   ],
@@ -108,14 +102,21 @@ window.WAVER_CONFIG = {
       id: "switch2",
       field: "qty_switch2",
       name: "Выключатель двухклавишный, 1 пост",
-      sub: "Скоро в продаже",
+      sub: "Готовим к запуску",
       defaultQty: 0,
       available: false,
     },
   ],
 
   prices: {
-    retail: { 1: 5000, 5: 5000, 10: 5000, 20: 5000, 30: 5000 },
-    master: { 1: 4620, 5: 4400, 10: 4150, 20: 4000, 30: 3940 },
+    retail: { 1: 4500, 5: 4350, 10: 4250, 20: 4150, 30: 4050 },
+    master: { 1: 4200, 5: 4100, 10: 4000, 20: 3900, 30: 3800 },
+  },
+
+  // Данные продавца для оферты — подставь реальные перед запуском
+  seller: {
+    name: "ИП __________",
+    inn: "____________",
+    address: "г. Тюмень",
   },
 };

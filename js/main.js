@@ -1,8 +1,12 @@
 (function () {
   const config = window.WAVER_CONFIG || {};
+  const isEnglish = location.pathname.startsWith("/english");
+  const langPrefix = isEnglish ? "/english" : "";
+  const t = (ru, en) => (isEnglish ? en : ru);
+
   const PRICES = config.prices || {
-    retail: { 1: 5000, 5: 5000, 10: 5000, 20: 5000, 30: 5000 },
-    master: { 1: 4620, 5: 4400, 10: 4150, 20: 4000, 30: 3940 },
+    retail: { 1: 4500, 5: 4350, 10: 4250, 20: 4150, 30: 4050 },
+    master: { 1: 4200, 5: 4100, 10: 4000, 20: 3900, 30: 3800 },
   };
 
   const PRODUCTS = config.orderProducts || [];
@@ -34,11 +38,11 @@
   }
 
   function getTierLabel(totalQty) {
-    if (totalQty >= 30) return "от 30 шт";
-    if (totalQty >= 20) return "от 20 шт";
-    if (totalQty >= 10) return "от 10 шт";
-    if (totalQty >= 5) return "от 5 шт";
-    return "1–4 шт";
+    if (totalQty >= 30) return t("от 30 шт", "30+ pcs");
+    if (totalQty >= 20) return t("от 20 шт", "20+ pcs");
+    if (totalQty >= 10) return t("от 10 шт", "10+ pcs");
+    if (totalQty >= 5) return t("от 5 шт", "5+ pcs");
+    return t("1–4 шт", "1–4 pcs");
   }
 
   function clampQty(value, allowZero) {
@@ -56,12 +60,16 @@
 
   function setMaster(on) {
     isMaster = on;
-    if (masterHidden) masterHidden.value = on ? "да" : "нет";
+    if (masterHidden) masterHidden.value = on ? t("да", "yes") : t("нет", "no");
     if (masterToggle) {
       masterToggle.classList.toggle("on", on);
       masterToggle.setAttribute("aria-pressed", on ? "true" : "false");
       const label = document.getElementById("master-label");
-      if (label) label.textContent = on ? "Тариф мастера включён" : "Тариф мастера выключен";
+      if (label) {
+        label.textContent = on
+          ? t("Тариф мастера включён", "Pro pricing enabled")
+          : t("Тариф мастера выключен", "Pro pricing disabled");
+      }
     }
     updateSummary();
   }
@@ -87,7 +95,7 @@
             <span>${p.sub}</span>
           </div>
           ${disabled ? `
-            <span class="badge-soon">Скоро</span>
+            <span class="badge-soon">${t("Скоро", "Soon")}</span>
             <input type="hidden" name="${p.field}" value="0">
           ` : `
             <div class="qty-control">
@@ -140,15 +148,15 @@
     });
 
     if (totalQty === 0) {
-      addLine("Добавьте товары", "—");
+      addLine(t("Добавьте товары", "Add products"), "—");
     } else {
-      addLine("Цена за шт", formatMoney(unitPrice) + " · " + getTierLabel(totalQty));
-      addLine("Тариф", isMaster ? "Мастер / плиточник" : "Розница");
+      addLine(t("Цена за шт", "Unit price"), formatMoney(unitPrice) + " · " + getTierLabel(totalQty));
+      addLine(t("Тариф", "Pricing"), isMaster ? t("Мастер / плиточник", "Pro / tiler") : t("Розница", "Retail"));
       const savings = isMaster ? (retailUnit - unitPrice) * totalQty : 0;
-      if (savings > 0) addLine("Экономия vs розницы", "− " + formatMoney(savings), "savings");
+      if (savings > 0) addLine(t("Экономия vs розницы", "Savings vs retail"), "− " + formatMoney(savings), "savings");
     }
 
-    if (delivery) addLine("Доставка", delivery);
+    if (delivery) addLine(t("Доставка", "Delivery"), delivery);
 
     if (totalPriceEl) totalPriceEl.textContent = totalQty > 0 ? formatMoney(total) : "0 ₽";
 
@@ -159,7 +167,7 @@
       "hidden-unit-price": unitPrice,
       "hidden-total": total,
       "hidden-total-qty": totalQty,
-      "hidden-tariff": isMaster ? "Мастер" : "Розница",
+      "hidden-tariff": isMaster ? t("Мастер", "Pro") : t("Розница", "Retail"),
       "hidden-tier": getTierLabel(totalQty),
       "hidden-savings": isMaster && totalQty > 0 ? (retailUnit - unitPrice) * totalQty : 0,
     };
@@ -208,14 +216,14 @@
   }
 
   function validateForm() {
-    if (getTotalQty() < 1) return "Добавьте хотя бы один товар в заказ";
+    if (getTotalQty() < 1) return t("Добавьте хотя бы один товар в заказ", "Add at least one product");
     const name = document.getElementById("name").value.trim();
     const phone = document.getElementById("phone").value.trim();
     const email = document.getElementById("email").value.trim();
-    if (!name) return "Укажите имя";
-    if (!phone || phone.replace(/\D/g, "").length < 10) return "Укажите корректный телефон";
-    if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return "Проверьте email";
-    if (!config.formspreeId) return "Не указан Formspree ID в config.js";
+    if (!name) return t("Укажите имя", "Enter your name");
+    if (!phone || phone.replace(/\D/g, "").length < 10) return t("Укажите корректный телефон", "Enter a valid phone number");
+    if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return t("Проверьте email", "Check your email");
+    if (!config.formspreeId) return t("Форма временно недоступна", "Form is temporarily unavailable");
     return "";
   }
 
@@ -226,7 +234,7 @@
       form.method = "POST";
     }
     const nextField = document.getElementById("form-next");
-    if (nextField) nextField.value = new URL("/thanks/", window.location.origin).href;
+    if (nextField) nextField.value = new URL(langPrefix + "/thanks/", window.location.origin).href;
 
     form.addEventListener("submit", (e) => {
       const error = validateForm();
@@ -238,7 +246,7 @@
       }
       formError.classList.remove("visible");
       submitBtn.disabled = true;
-      submitBtn.textContent = "Отправляем…";
+      submitBtn.textContent = t("Отправляем…", "Sending…");
     });
   }
 
@@ -247,7 +255,7 @@
     const images = config.galleryImages || [];
     if (!grid || images.length === 0) return;
     grid.innerHTML = images.map((img) => `
-      <a href="/gallery" class="gallery-preview-item">
+      <a href="${langPrefix}/gallery" class="gallery-preview-item">
         <img src="${img.src}" alt="${img.alt || ""}" loading="lazy">
         <span>${img.caption || ""}</span>
       </a>
@@ -266,6 +274,40 @@
     `).join("");
   }
 
+  function renderPriceTable() {
+    const root = document.getElementById("price-table-root");
+    if (!root) return;
+
+    const tiers = [
+      { key: 1, label: t("1–4 шт", "1–4 pcs") },
+      { key: 5, label: t("от 5 шт", "5+ pcs"), highlight: true },
+      { key: 10, label: t("от 10 шт", "10+ pcs") },
+      { key: 20, label: t("от 20 шт", "20+ pcs") },
+      { key: 30, label: t("от 30 шт", "30+ pcs") },
+    ];
+
+    root.innerHTML = `
+      <table class="price-table price-table--dual">
+        <thead>
+          <tr>
+            <th>${t("Партия", "Quantity")}</th>
+            <th>${t("Розница", "Retail")}</th>
+            <th>${t("Мастера", "Pro")}</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${tiers.map((tier) => `
+            <tr${tier.highlight ? ' class="highlight"' : ""}>
+              <td>${tier.label}${tier.highlight ? ` <span class="badge">${t("выгодно", "popular")}</span>` : ""}</td>
+              <td>${formatMoney(PRICES.retail[tier.key])}</td>
+              <td>${formatMoney(PRICES.master[tier.key])}</td>
+            </tr>
+          `).join("")}
+        </tbody>
+      </table>
+    `;
+  }
+
   buildLineItems();
   setupMasterToggle();
   setupDelivery();
@@ -273,5 +315,6 @@
   setupForm();
   setupGalleryPreview();
   setupKitContents();
+  renderPriceTable();
   updateSummary();
 })();

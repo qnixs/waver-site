@@ -23,10 +23,6 @@
     slide.innerHTML = `
       <img src="${img.src}" alt="${img.alt || ""}" loading="${i === 0 ? "eager" : "lazy"}"
            onerror="this.parentElement.classList.add('no-image')">
-      <div class="carousel-placeholder">
-        <p>Добавь фото: <code>${img.src}</code></p>
-        <small>Положи файл в папку images/hero/</small>
-      </div>
     `;
     track.appendChild(slide);
 

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Публичная оферта — WaverStore</title>
+  <title>Публичная оферта — WAVER STORE</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -14,15 +14,13 @@
     <div class="container header-inner">
       <a href="/" class="logo" id="site-logo"></a>
       <nav class="nav">
-        <div class="nav-links">
-          <a href="/">Главная</a>
-          <a href="/#order">Заказать</a>
-        </div>
+        <div class="nav-links"></div>
         <a href="/#order" class="btn btn-dark">Заказать</a>
+        <button type="button" class="menu-btn" id="menu-btn" aria-label="Меню">☰</button>
       </nav>
     </div>
   </header>
-
+  <nav class="mobile-nav" id="mobile-nav"></nav>
   <main>
     <section class="page-hero">
       <div class="container">
@@ -30,13 +28,14 @@
         <h1>Публичная оферта</h1>
       </div>
     </section>
-
     <section class="section">
       <div class="container page-content">
-        <p><em>Шаблон оферты. Замени данные продавца (ИП/ООО, ИНН, адрес) на реальные перед запуском продаж.</em></p>
+        <p><strong>Продавец:</strong> <span data-seller-name>ИП __________</span></p>
+        <p><strong>ИНН:</strong> <span data-seller-inn>____________</span></p>
+        <p><strong>Адрес:</strong> <span data-seller-address>г. Тюмень</span></p>
 
         <h2>1. Общие положения</h2>
-        <p>Настоящая оферта определяет порядок оформления заказов на сайте WaverStore (далее — Продавец) и является публичным предложением в соответствии со ст. 437 ГК РФ.</p>
+        <p>Настоящая оферта определяет порядок оформления заказов на сайте WAVER STORE (далее — Продавец) и является публичным предложением в соответствии со ст. 437 ГК РФ.</p>
 
         <h2>2. Предмет</h2>
         <p>Продавец реализует скрытые розетки и выключатели для монтажа заподлицо в керамограните. Ассортимент и цены указаны на сайте.</p>
@@ -45,10 +44,10 @@
         <p>Заказ оформляется через форму на сайте. Отправка заявки не является оплатой. Продавец подтверждает наличие, стоимость доставки и направляет счёт или ссылку на оплату в мессенджере или по email.</p>
 
         <h2>4. Цены и оплата</h2>
-        <p>Цены в рублях. Тариф для мастеров и плиточников применяется при включении соответствующей опции в форме. Оплата — по договорённости: предоплата или при получении.</p>
+        <p>Цены указаны в рублях за одну единицу товара. Итоговая стоимость заказа зависит от количества изделий, выбранного тарифа, доставки и подтверждается Продавцом до оплаты.</p>
 
         <h2>5. Доставка</h2>
-        <p>Доставка по тарифам выбранной службы (Ozon, СДЭК, Boxberry, Почта России) или самовывоз в г. Тюмень. Сроки согласуются при подтверждении заказа.</p>
+        <p>Доставка выполняется через выбранную службу доставки, ПВЗ или самовывоз в г. Тюмень. Точный способ, срок и стоимость доставки согласуются при подтверждении заказа.</p>
 
         <h2>6. Возврат</h2>
         <p>Возврат и обмен — в соответствии с Законом «О защите прав потребителей» для товаров надлежащего качества, не бывших в употреблении.</p>
@@ -60,18 +59,19 @@
       </div>
     </section>
   </main>
-
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p class="footer-logo" data-brand>WaverStore</p>
-      <div class="footer-links">
-        <a href="/">Главная</a>
-        <a href="/gallery">Галерея</a>
-        <a href="/download">Скачать</a>
+      <p class="footer-logo" data-brand>WAVER STORE</p>
+      <div>
+        <div class="footer-links">
+          <a href="/">Главная</a>
+          <a href="/gallery">Галерея</a>
+          <a href="/download">Скачать</a>
+        </div>
+        <p class="lang-switch" data-lang-switch></p>
       </div>
     </div>
   </footer>
-
   <script src="/js/config.js"></script>
   <script src="/js/layout.js"></script>
 </body>
