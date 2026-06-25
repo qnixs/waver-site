@@ -26,14 +26,24 @@ window.WAVER_CONFIG = {
   // Адрес самовывоза — показывается при выборе «Самовывоз, Тюмень»
   pickupAddress: "г. Тюмень, производство WAVER STORE",
 
+  // ── SEO (вставь коды после регистрации в Search Console / Вебмастер) ──
+  seo: {
+    siteUrl: "https://waverstore.site",
+    googleSiteVerification: "",
+    yandexVerification: "",
+    ogImage: "/images/hero/01.jpg",
+  },
+
   heroImages: [
-    { src: "/images/hero/01.jpg", alt: "Скрытая розетка заподлицо в керамограните" },
-    { src: "/images/hero/02.jpg", alt: "Блок из 2 постов — розетка и выключатель" },
+    { src: "/images/hero/01.jpg", alt: "Скрытая розетка заподлицо в керамограните на кухне WAVER STORE" },
+    { src: "/images/hero/02.jpg", alt: "Блок скрытых розеток и выключателя заподлицо WAVER STORE" },
   ],
 
   galleryImages: [
-    { src: "/images/gallery/01.jpg", alt: "Розетка заподлицо", caption: "Розетка заподлицо" },
-    { src: "/images/gallery/02.jpg", alt: "Блок из 2 постов", caption: "Розетка и выключатель — блок из 2 постов" },
+    { src: "/images/gallery/01.jpg", alt: "Скрытая розетка заподлицо в керамограните монтаж", caption: "Розетка заподлицо — кухня" },
+    { src: "/images/gallery/02.jpg", alt: "Блок из 2 постов розетка и выключатель в плитке", caption: "Розетка и выключатель — блок" },
+    { src: "/images/gallery/01.jpg", alt: "Потайная розетка под плитку WAVER STORE в ванной", caption: "Пример для ванной" },
+    { src: "/images/gallery/02.jpg", alt: "Скрытые розетки на кухне в керамограните фартук", caption: "Пример для кухни" },
   ],
 
   downloads: [
@@ -42,12 +52,6 @@ window.WAVER_CONFIG = {
       file: "/files/instrukciya-montazh.pdf",
       label: "Инструкция по монтажу",
       desc: "Пошаговая установка для электрика и плиточника",
-    },
-    {
-      type: "pdf",
-      file: "/files/shablon-reza.pdf",
-      label: "Шаблон для реза",
-      desc: "PDF-шаблон для точного выреза в плитке",
     },
     {
       type: "video",

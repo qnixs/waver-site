@@ -204,18 +204,7 @@
     });
   }
 
-  function setupFaq() {
-    document.querySelectorAll(".faq-question").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const item = btn.closest(".faq-item");
-        const wasOpen = item.classList.contains("open");
-        document.querySelectorAll(".faq-item").forEach((el) => el.classList.remove("open"));
-        if (!wasOpen) item.classList.add("open");
-      });
-    });
-  }
-
-  function validateForm() {
+  function setupDelivery() {
     if (getTotalQty() < 1) return t("Добавьте хотя бы один товар в заказ", "Add at least one product");
     const name = document.getElementById("name").value.trim();
     const phone = document.getElementById("phone").value.trim();
@@ -311,7 +300,6 @@
   buildLineItems();
   setupMasterToggle();
   setupDelivery();
-  setupFaq();
   setupForm();
   setupGalleryPreview();
   setupKitContents();

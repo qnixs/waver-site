@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://waverstore.site/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://waverstore.site/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://waverstore.site/english/"/>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://waverstore.site/english/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url><loc>https://waverstore.site/gallery/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://waverstore.site/download/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://waverstore.site/offer/</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://waverstore.site/blog/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://waverstore.site/blog/rozetki-v-vannoj/</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://waverstore.site/blog/rozetki-na-kuhne/</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://waverstore.site/blog/montazh-skrytoj-rozetki/</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://waverstore.site/blog/sravnenie-skrytyh-rozetok/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://waverstore.site/blog/dlya-plitochnikov/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://waverstore.site/english/gallery/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://waverstore.site/english/download/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://waverstore.site/english/offer/</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://waverstore.site/english/blog/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://waverstore.site/english/blog/rozetki-v-vannoj/</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://waverstore.site/english/blog/rozetki-na-kuhne/</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://waverstore.site/english/blog/montazh-skrytoj-rozetki/</loc><changefreq>monthly</changefreq><priority>0.75</priority></url>
+</urlset>

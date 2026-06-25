@@ -75,6 +75,7 @@
           { href: section("#kit"), label: "Kit" },
           { href: section("#prices"), label: "Prices" },
           { href: page("/gallery"), label: "Gallery" },
+          { href: page("/blog"), label: "Articles" },
           { href: page("/download"), label: "Downloads" },
           { href: section("#faq"), label: "FAQ" },
         ]
@@ -84,6 +85,7 @@
           { href: section("#kit"), label: "Комплект" },
           { href: section("#prices"), label: "Цены" },
           { href: page("/gallery"), label: "Галерея" },
+          { href: page("/blog"), label: "Статьи" },
           { href: page("/download"), label: "Скачать" },
           { href: section("#faq"), label: "FAQ" },
         ];
@@ -178,5 +180,14 @@
 
   document.getElementById("menu-btn")?.addEventListener("click", () => {
     document.getElementById("mobile-nav")?.classList.toggle("open");
+  });
+
+  document.querySelectorAll(".faq-question").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const item = btn.closest(".faq-item");
+      const wasOpen = item?.classList.contains("open");
+      document.querySelectorAll(".faq-item").forEach((el) => el.classList.remove("open"));
+      if (!wasOpen) item?.classList.add("open");
+    });
   });
 })();

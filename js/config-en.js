@@ -12,13 +12,23 @@ window.WAVER_CONFIG = {
     defaultZoom: 11,
   },
   pickupAddress: "Tyumen, WAVER STORE production facility",
+
+  seo: {
+    siteUrl: "https://waverstore.site",
+    googleSiteVerification: "",
+    yandexVerification: "",
+    ogImage: "/images/hero/01.jpg",
+  },
+
   heroImages: [
-    { src: "/images/hero/01.jpg", alt: "Flush-mounted hidden socket in porcelain stoneware" },
-    { src: "/images/hero/02.jpg", alt: "Two-gang block — socket and switch" },
+    { src: "/images/hero/01.jpg", alt: "Flush-mounted hidden socket in porcelain stoneware kitchen WAVER STORE" },
+    { src: "/images/hero/02.jpg", alt: "Two-gang hidden socket and switch block WAVER STORE" },
   ],
   galleryImages: [
-    { src: "/images/gallery/01.jpg", alt: "Flush socket", caption: "Flush-mounted socket" },
-    { src: "/images/gallery/02.jpg", alt: "Two-gang block", caption: "Socket and switch block" },
+    { src: "/images/gallery/01.jpg", alt: "Hidden flush socket in porcelain stoneware installation", caption: "Flush socket — kitchen" },
+    { src: "/images/gallery/02.jpg", alt: "Two-gang socket and switch block in tile", caption: "Socket and switch block" },
+    { src: "/images/gallery/01.jpg", alt: "Recessed socket under tile WAVER STORE bathroom", caption: "Bathroom example" },
+    { src: "/images/gallery/02.jpg", alt: "Hidden kitchen backsplash sockets in porcelain stoneware", caption: "Kitchen example" },
   ],
   downloads: [
     {
