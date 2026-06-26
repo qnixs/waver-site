@@ -737,6 +737,12 @@ textarea { min-height: 5rem; resize: vertical; }
 .footer-logo { font-family: var(--font-display); font-size: 1.35rem; font-weight: 600; color: var(--white); margin: 0; }
 .footer-links { display: flex; flex-wrap: wrap; gap: 1rem; font-size: 0.8125rem; }
 .footer-links a:hover { color: var(--white); }
+.footer-sitemap {
+  display: flex; flex-wrap: wrap; gap: 0.5rem 0.85rem;
+  margin-top: 0.65rem; font-size: 0.8125rem;
+}
+.footer-sitemap a { color: #c9c4bc; }
+.footer-sitemap a:hover { color: var(--white); }
 .footer-contacts a { color: var(--white); }
 .footer-messenger { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem; }
 .footer-messenger .btn { font-size: 0.75rem; padding: 0.5rem 1rem; }

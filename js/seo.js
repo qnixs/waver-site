@@ -104,7 +104,8 @@
   document.title = meta.title;
   upsertMeta("description", meta.description);
   const isBlog = lookupPath === "/blog" || lookupPath.startsWith("/blog/");
-  upsertMeta("robots", isBlog ? "noindex, nofollow" : "index, follow");
+  const isThanks = lookupPath === "/thanks";
+  upsertMeta("robots", isBlog || isThanks ? "noindex, nofollow" : "index, follow");
   upsertLink("canonical", canonical);
 
   const hasEnMirror =
@@ -130,7 +131,7 @@
   if (seo.googleSiteVerification) upsertMeta("google-site-verification", seo.googleSiteVerification);
   if (seo.yandexVerification) upsertMeta("yandex-verification", seo.yandexVerification);
 
-  const ogImage = siteUrl + (seo.ogImage || "/images/hero/01.jpg");
+  const ogImage = siteUrl + (seo.ogImage || "/images/hero/skrytaya-rozetka-kuhnya.jpg");
   upsertMeta("og:title", meta.title, "property");
   upsertMeta("og:description", meta.description, "property");
   upsertMeta("og:url", canonical, "property");
@@ -144,17 +145,46 @@
 
   const org = {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": "LocalBusiness",
     name: config.brand || "WAVER STORE",
     url: siteUrl,
-    logo: siteUrl + "/images/hero/01.jpg",
+    logo: siteUrl + "/favicon.png",
+    image: ogImage,
     address: {
       "@type": "PostalAddress",
       addressLocality: "Tyumen",
+      addressRegion: "Tyumen Oblast",
       addressCountry: "RU",
     },
+    areaServed: "RU",
   };
   injectJsonLd(org);
+
+  const breadcrumbLabels = {
+    "/gallery": isEnglish ? "Gallery" : "Галерея",
+    "/download": isEnglish ? "Downloads" : "Скачать",
+    "/offer": isEnglish ? "Terms" : "Оферта",
+  };
+  if (breadcrumbLabels[lookupPath]) {
+    injectJsonLd({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: isEnglish ? "Home" : "Главная",
+          item: siteUrl + (isEnglish ? "/english/" : "/"),
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: breadcrumbLabels[lookupPath],
+          item: canonical,
+        },
+      ],
+    });
+  }
 
   if (path === "/" || path === "/english") {
     injectJsonLd({

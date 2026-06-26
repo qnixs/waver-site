@@ -102,28 +102,31 @@
 
     const navLinks = document.querySelector(".nav-links");
     if (navLinks) {
-      navLinks.innerHTML = desktop
-        .map((item) => {
-          const active = !item.href.includes("#") && normalizePath(item.href) === path;
-          return `<a href="${navHref(item.href)}"${active ? ' class="active"' : ""}>${item.label}</a>`;
-        })
-        .join("");
+      if (navLinks.querySelector("a")) {
+        navLinks.querySelectorAll("a").forEach((link) => {
+          link.classList.remove("active");
+          const href = link.getAttribute("href") || "";
+          if (!href.includes("#")) {
+            const linkPath = normalizePath(href);
+            if (linkPath === path) link.classList.add("active");
+          }
+        });
+      } else {
+        navLinks.innerHTML = desktop
+          .map((item) => {
+            const active = !item.href.includes("#") && normalizePath(item.href) === path;
+            return `<a href="${navHref(item.href)}"${active ? ' class="active"' : ""}>${item.label}</a>`;
+          })
+          .join("");
+      }
     }
 
     const mobileNav = document.getElementById("mobile-nav");
-    if (mobileNav) {
+    if (mobileNav && !mobileNav.querySelector("a")) {
       mobileNav.innerHTML = mobile
         .map((item) => `<a href="${navHref(item.href)}">${item.label}</a>`)
         .join("");
     }
-
-    document.querySelectorAll(".nav-links a").forEach((link) => {
-      const href = link.getAttribute("href") || "";
-      if (!href.includes("#")) {
-        const linkPath = normalizePath(href);
-        if (linkPath === path) link.classList.add("active");
-      }
-    });
   }
 
   function renderLangSwitch() {
@@ -132,6 +135,7 @@
     const enPath = mapLangPath(location.pathname, true);
 
     hosts.forEach((host) => {
+      if (host.querySelector("a")) return;
       host.innerHTML = `
         <a href="${ruPath}" class="lang-switch-link${isEnglish ? "" : " active"}" hreflang="ru">RU</a>
         <span class="lang-switch-sep">/</span>
@@ -151,30 +155,27 @@
     return stripped === "/" ? "/" : stripped;
   }
 
-  function addHreflang() {
-    const head = document.head;
-    if (!head || head.querySelector("[data-hreflang]")) return;
-    const ru = mapLangPath(location.pathname, false);
-    const en = mapLangPath(location.pathname, true);
-    const full = (path) => location.origin + path;
-
-    [
-      { lang: "ru", href: full(ru) },
-      { lang: "en", href: full(en) },
-      { lang: "x-default", href: full(ru) },
-    ].forEach((item) => {
-      const link = document.createElement("link");
-      link.rel = "alternate";
-      link.hreflang = item.lang;
-      link.href = item.href;
-      link.setAttribute("data-hreflang", "1");
-      head.appendChild(link);
-    });
-  }
-
   renderNavigation();
   renderLangSwitch();
-  addHreflang();
+
+  if (config.yandexMetrikaId) {
+    (function (m, e, t, r, i, k, a) {
+      m[i] =
+        m[i] ||
+        function () {
+          (m[i].a = m[i].a || []).push(arguments);
+        };
+      m[i].l = 1 * new Date();
+      for (k = 0; k < document.scripts.length; k++) {
+        if (document.scripts[k].src === r) return;
+      }
+      a = e.createElement(t);
+      a.async = 1;
+      a.src = r;
+      e.head.appendChild(a);
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    window.ym(config.yandexMetrikaId, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true, webvisor: true });
+  }
 
   document.getElementById("menu-btn")?.addEventListener("click", () => {
     document.getElementById("mobile-nav")?.classList.toggle("open");

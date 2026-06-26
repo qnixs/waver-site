@@ -30,20 +30,23 @@ window.WAVER_CONFIG = {
   seo: {
     siteUrl: "https://waverstore.site",
     googleSiteVerification: "",
-    yandexVerification: "",
-    ogImage: "/images/hero/01.jpg",
+    yandexVerification: "8bb05e284e152a2e",
+    ogImage: "/images/hero/skrytaya-rozetka-kuhnya.jpg",
   },
 
+  // Яндекс.Метрика — вставь номер счётчика (metrika.yandex.ru), иначе оставь пустым
+  yandexMetrikaId: "",
+
   heroImages: [
-    { src: "/images/hero/01.jpg", alt: "Скрытая розетка заподлицо в керамограните на кухне WAVER STORE" },
-    { src: "/images/hero/02.jpg", alt: "Блок скрытых розеток и выключателя заподлицо WAVER STORE" },
+    { src: "/images/hero/skrytaya-rozetka-kuhnya.jpg", alt: "Скрытая розетка заподлицо в керамограните на кухне WAVER STORE" },
+    { src: "/images/hero/blok-rozetka-vyklyuchatel.jpg", alt: "Блок скрытых розеток и выключателя заподлицо WAVER STORE" },
   ],
 
   galleryImages: [
-    { src: "/images/gallery/01.jpg", alt: "Скрытая розетка заподлицо в керамограните монтаж", caption: "Розетка заподлицо — кухня" },
-    { src: "/images/gallery/02.jpg", alt: "Блок из 2 постов розетка и выключатель в плитке", caption: "Розетка и выключатель — блок" },
-    { src: "/images/gallery/01.jpg", alt: "Потайная розетка под плитку WAVER STORE в ванной", caption: "Пример для ванной" },
-    { src: "/images/gallery/02.jpg", alt: "Скрытые розетки на кухне в керамограните фартук", caption: "Пример для кухни" },
+    { src: "/images/gallery/montazh-vannaya-keraogranit.jpg", alt: "Скрытая розетка заподлицо в керамограните монтаж в ванной", caption: "Розетка заподлицо — ванная" },
+    { src: "/images/gallery/montazh-kuhnya-fartuk.jpg", alt: "Блок из 2 постов розетка и выключатель в плитке на кухне", caption: "Розетка и выключатель — блок" },
+    { src: "/images/gallery/montazh-vannaya-keraogranit.jpg", alt: "Потайная розетка под плитку WAVER STORE в ванной", caption: "Пример для ванной" },
+    { src: "/images/gallery/montazh-kuhnya-fartuk.jpg", alt: "Скрытые розетки на кухне в керамограните фартук", caption: "Пример для кухни" },
   ],
 
   downloads: [
@@ -119,7 +122,7 @@ window.WAVER_CONFIG = {
 
   // Данные продавца для оферты — подставь реальные перед запуском
   seller: {
-    name: "ИП __________",
+    name: "СМЗ",
     inn: "____________",
     address: "г. Тюмень",
   },

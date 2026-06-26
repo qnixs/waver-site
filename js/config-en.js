@@ -17,18 +17,20 @@ window.WAVER_CONFIG = {
     siteUrl: "https://waverstore.site",
     googleSiteVerification: "",
     yandexVerification: "8bb05e284e152a2e",
-    ogImage: "/images/hero/01.jpg",
+    ogImage: "/images/hero/skrytaya-rozetka-kuhnya.jpg",
   },
 
+  yandexMetrikaId: "",
+
   heroImages: [
-    { src: "/images/hero/01.jpg", alt: "Flush-mounted hidden socket in porcelain stoneware kitchen WAVER STORE" },
-    { src: "/images/hero/02.jpg", alt: "Two-gang hidden socket and switch block WAVER STORE" },
+    { src: "/images/hero/skrytaya-rozetka-kuhnya.jpg", alt: "Flush-mounted hidden socket in porcelain stoneware kitchen WAVER STORE" },
+    { src: "/images/hero/blok-rozetka-vyklyuchatel.jpg", alt: "Two-gang hidden socket and switch block WAVER STORE" },
   ],
   galleryImages: [
-    { src: "/images/gallery/01.jpg", alt: "Hidden flush socket in porcelain stoneware installation", caption: "Flush socket — kitchen" },
-    { src: "/images/gallery/02.jpg", alt: "Two-gang socket and switch block in tile", caption: "Socket and switch block" },
-    { src: "/images/gallery/01.jpg", alt: "Recessed socket under tile WAVER STORE bathroom", caption: "Bathroom example" },
-    { src: "/images/gallery/02.jpg", alt: "Hidden kitchen backsplash sockets in porcelain stoneware", caption: "Kitchen example" },
+    { src: "/images/gallery/montazh-vannaya-keraogranit.jpg", alt: "Hidden flush socket in porcelain stoneware bathroom", caption: "Flush socket — bathroom" },
+    { src: "/images/gallery/montazh-kuhnya-fartuk.jpg", alt: "Two-gang socket and switch block in kitchen tile", caption: "Socket and switch block" },
+    { src: "/images/gallery/montazh-vannaya-keraogranit.jpg", alt: "Recessed socket under tile WAVER STORE bathroom", caption: "Bathroom example" },
+    { src: "/images/gallery/montazh-kuhnya-fartuk.jpg", alt: "Hidden kitchen backsplash sockets in porcelain stoneware", caption: "Kitchen example" },
   ],
   downloads: [
     {
