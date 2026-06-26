@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /blog/
+Disallow: /english/blog/
 
 Sitemap: https://waverstore.site/sitemap.xml

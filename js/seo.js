@@ -103,7 +103,8 @@
 
   document.title = meta.title;
   upsertMeta("description", meta.description);
-  upsertMeta("robots", "index, follow");
+  const isBlog = lookupPath === "/blog" || lookupPath.startsWith("/blog/");
+  upsertMeta("robots", isBlog ? "noindex, nofollow" : "index, follow");
   upsertLink("canonical", canonical);
 
   const hasEnMirror =
@@ -111,11 +112,7 @@
     path === "/english" ||
     lookupPath === "/gallery" ||
     lookupPath === "/download" ||
-    lookupPath === "/offer" ||
-    lookupPath === "/blog" ||
-    lookupPath === "/blog/rozetki-v-vannoj" ||
-    lookupPath === "/blog/rozetki-na-kuhne" ||
-    lookupPath === "/blog/montazh-skrytoj-rozetki";
+    lookupPath === "/offer";
 
   if (hasEnMirror) {
     const ruHref =

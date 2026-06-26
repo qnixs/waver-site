@@ -75,7 +75,6 @@
           { href: section("#kit"), label: "Kit" },
           { href: section("#prices"), label: "Prices" },
           { href: page("/gallery"), label: "Gallery" },
-          { href: page("/blog"), label: "Articles" },
           { href: page("/download"), label: "Downloads" },
           { href: section("#faq"), label: "FAQ" },
         ]
@@ -85,7 +84,6 @@
           { href: section("#kit"), label: "Комплект" },
           { href: section("#prices"), label: "Цены" },
           { href: page("/gallery"), label: "Галерея" },
-          { href: page("/blog"), label: "Статьи" },
           { href: page("/download"), label: "Скачать" },
           { href: section("#faq"), label: "FAQ" },
         ];
