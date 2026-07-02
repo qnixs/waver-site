@@ -94,7 +94,10 @@
     el.href = href;
   }
 
+  const hasStaticJsonLd = !!document.querySelector('script[type="application/ld+json"][data-static]');
+
   function injectJsonLd(data) {
+    if (hasStaticJsonLd) return;
     const script = document.createElement("script");
     script.type = "application/ld+json";
     script.textContent = JSON.stringify(data);
