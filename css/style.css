@@ -1137,7 +1137,7 @@ input:focus, textarea:focus, select:focus {
 /* Якорные ссылки не прячутся под шапкой */
 section[id] { scroll-margin-top: 4.5rem; }
 
-/* Больше воздu0445а на широких экранах */
+/* Больше воздуха на широких экранах */
 @media (min-width: 1024px) {
   .section { padding: 4.5rem 0; }
 }
