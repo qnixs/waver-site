@@ -1067,3 +1067,85 @@ input:focus, textarea:focus, select:focus {
   .gallery-page-item img { transition: none; }
   .gallery-preview-item:hover img, .gallery-page-item:hover img { transform: none; }
 }
+
+/* ═════════════════════════════════════════
+   ТЕМА 2.1 — живость и премиальные детали
+   ═════════════════════════════════════════ */
+
+/* Плавное появление первого экрана при загрузке */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero-grid > div:first-child { animation: fadeUp 0.65s ease both; }
+.hero-grid .carousel { animation: fadeUp 0.65s ease 0.18s both; }
+
+/* Заголовок главного экрана — увереннее */
+.hero h1 { font-weight: 700; }
+
+/* Блеск на главных кнопках при наведении */
+.btn-primary, .btn-accent { position: relative; overflow: hidden; }
+.btn-primary::after, .btn-accent::after {
+  content: ""; position: absolute; top: 0; bottom: 0; width: 40%; left: -60%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.5s ease;
+  pointer-events: none;
+}
+.btn-primary:hover::after, .btn-accent:hover::after { left: 120%; }
+
+/* Кнопка «Заказать» в шапке: градиент при наведении */
+.btn-dark:hover { background: var(--accent-grad); }
+
+/* Логотип: градиентный текст при наведении */
+.logo:hover {
+  background: var(--accent-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Карточки: градиентная полоска сверху выезжает при наведении */
+.card, .catalog-card, .step-card { position: relative; overflow: hidden; }
+.card::before, .catalog-card::before, .step-card::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: var(--accent-grad);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.3s ease;
+}
+.card:hover::before, .catalog-card:hover::before, .step-card:hover::before { transform: scaleX(1); }
+
+/* Галочки преимуществ — в аккуратных кружках */
+.feature-list li { display: flex; align-items: flex-start; gap: 0.55rem; }
+.feature-list li::before {
+  content: "✓"; margin-right: 0; margin-top: 0.12rem;
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 1.15rem; height: 1.15rem; flex-shrink: 0;
+  border-radius: 50%; font-size: 0.62rem;
+  background: rgba(176, 92, 46, 0.13); color: var(--accent);
+}
+
+/* Таблица цен: подсветка строки под курсором */
+.price-table tbody tr { transition: background 0.15s ease; }
+.price-table tbody tr:hover { background: rgba(176, 92, 46, 0.045); }
+
+/* Сводка заказа: тонкое тёплое свечение вокруг */
+.order-summary {
+  box-shadow: 0 20px 48px rgba(22, 20, 15, 0.35), 0 0 0 1px rgba(217, 122, 63, 0.15), 0 0 44px rgba(176, 92, 46, 0.12);
+}
+
+/* Якорные ссылки не прячутся под шапкой */
+section[id] { scroll-margin-top: 4.5rem; }
+
+/* Больше воздуха на широких экранах */
+@media (min-width: 1024px) {
+  .section { padding: 4.5rem 0; }
+}
+
+/* Уважаем «меньше анимаций» */
+@media (prefers-reduced-motion: reduce) {
+  .hero-grid > div:first-child, .hero-grid .carousel { animation: none; }
+  .btn-primary::after, .btn-accent::after { display: none; }
+  .card::before, .catalog-card::before, .step-card::before,
+  .price-table tbody tr { transition: none; }
+}
