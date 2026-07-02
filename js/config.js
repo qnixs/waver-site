@@ -29,12 +29,19 @@ window.WAVER_CONFIG = {
   // ── SEO (вставь коды после регистрации в Search Console / Вебмастер) ──
   seo: {
     siteUrl: "https://waverstore.site",
+    // Google Search Console: https://search.google.com/search-console → «Добавить ресурс»
+    // → способ подтверждения «HTML-тег» → скопируй значение из content="..." и вставь сюда.
+    // Также раскомментируй строку google-site-verification в index.html и вставь код туда.
     googleSiteVerification: "",
     yandexVerification: "8bb05e284e152a2e",
     ogImage: "/images/hero/skrytaya-rozetka-kuhnya.jpg",
   },
 
-  // Яндекс.Метрика — вставь номер счётчика (metrika.yandex.ru), иначе оставь пустым
+  // ── ЯНДЕКС.МЕТРИКА — счётчик НЕ установлен, пока это поле пустое! ──
+  // 1. Зайди на https://metrika.yandex.ru → «Добавить счётчик»
+  // 2. Укажи адрес сайта waverstore.site и создай счётчик
+  // 3. Скопируй НОМЕР счётчика (8–9 цифр) и вставь сюда в кавычках, например: "99123456"
+  // 4. Опубликуй изменения (git push) — код Метрики подключится на всех страницах сам
   yandexMetrikaId: "",
 
   heroImages: [
