@@ -59,7 +59,7 @@ window.WAVER_CONFIG = {
   downloads: [
     {
       type: "pdf",
-      file: "/files/instrukciya-montazh.pdf",
+      file: "/files/socket_installation_new.pdf",
       label: "Инструкция по монтажу",
       desc: "Пошаговая установка для электрика и плиточника",
     },
