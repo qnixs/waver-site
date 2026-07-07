@@ -30,11 +30,11 @@
     .article-photo{
       display:block;
       width:100%;
-      height:auto;
-      aspect-ratio:16/9;
-      object-fit:cover;
+      height:auto;       /* высота считается из реальных пропорций картинки, не обрезаем и не тянем */
+      max-height:80vh;    /* защита от гигантских картинок на весь экран */
+      object-fit:contain; /* картинка показывается целиком */
       border-radius:12px;
-      margin:1.5rem 0;
+      margin:1.5rem auto;
       background:#f3f3f3; /* видно, пока картинка грузится */
     }
   </style>
@@ -113,7 +113,7 @@
     <section class="section">
       <div class="container article-prose">
 
-        <img class="article-photo" src="/images/gallery/montazh-kuhnya-fartuk.jpg" alt="Скрытая розетка заподлицо в керамограните на кухне" width="1200" height="675" loading="eager" fetchpriority="high">
+        <img class="article-photo" src="/images/gallery/montazh-kuhnya-fartuk.jpg" alt="Скрытая розетка заподлицо в керамограните на кухне" loading="eager" fetchpriority="high">
 
         <p><strong>Скрытая розетка заподлицо</strong> — это розетка, установленная вровень с поверхностью плитки или керамогранита. Снаружи не видно ни рамки, ни выступающего корпуса — только ровная плоскость стены. Такое решение всё чаще выбирают для кухонного фартука, ванной и интерьеров, где важна чистая геометрия поверхности.</p>
 
@@ -133,7 +133,7 @@
         </ul>
         <p>Решение заподлицо снимает все четыре проблемы разом.</p>
 
-        <img class="article-photo" src="/images/gallery/sravnenie-rozetok.jpg" alt="Обычная розетка в рамке рядом с розеткой заподлицо" width="1200" height="675" loading="lazy">
+        <img class="article-photo" src="/images/gallery/sravnenie-rozetok.jpg" alt="Обычная розетка в рамке рядом с розеткой заподлицо" loading="lazy">
 
         <h2>Как ещё называют такое решение</h2>
         <p>Устоявшегося термина пока нет, поэтому в поиске его называют по-разному — но речь всегда об одном и том же: скрытые розетки, розетки заподлицо, розетки под плитку, розетки в плитку, встроенные розетки, невидимые розетки, врезные розетки, розетки без рамки.</p>
@@ -170,14 +170,14 @@
         </table>
         <p>Если задача — ровная плоскость на стене без видимых элементов, вариант один: врезная розетка заподлицо.</p>
 
-        <img class="article-photo" src="/images/gallery/komplekt-v-razbore.jpg" alt="Комплект скрытой розетки в разборе — все детали" width="1200" height="675" loading="lazy">
+        <img class="article-photo" src="/images/gallery/komplekt-v-razbore.jpg" alt="Комплект скрытой розетки в разборе — все детали" loading="lazy">
 
         <h2>Где применяют скрытые розетки</h2>
 
         <h3>Кухонный фартук</h3>
         <p>Самое популярное место. На фартуке обычно 3–6 розеток, и именно здесь рамки заметнее всего — на уровне глаз, на самой «парадной» поверхности кухни. Розетки заподлицо дают тот эффект «дорогого ремонта», который считывается мгновенно — особенно на керамограните под мрамор и на тёмной плитке. Подробнее — <a href="/blog/rozetki-na-kuhne/">розетки на кухне заподлицо</a>.</p>
 
-        <img class="article-photo" src="/images/gallery/montazh-kuhnya-fartuk.jpg" alt="Скрытые розетки на кухонном фартуке заподлицо с плиткой" width="1200" height="675" loading="lazy">
+        <img class="article-photo" src="/images/gallery/montazh-kuhnya-fartuk.jpg" alt="Скрытые розетки на кухонном фартуке заподлицо с плиткой" loading="lazy">
 
         <h3>Кухонный остров</h3>
         <p>Остров облицовывают керамогранитом, и торчащая сбоку рамка портит весь вид. Врезная розетка в торце острова практически незаметна, пока ей не пользуются.</p>
@@ -212,7 +212,7 @@
           <li><strong>Сборка и подключение.</strong> Монтажная рамка вклеивается с обратной стороны плитки клеем-герметиком для керамики и металла (Soudal Fix All, Akfix 705 или аналог), механизм подключается как обычная розетка, плоскость выставляется регулировочным кольцом.</li>
         </ol>
 
-        <img class="article-photo" src="/images/gallery/montazh-sverlenie.jpg" alt="Процесс монтажа — сверление коронкой и вырез по шаблону" width="1200" height="675" loading="lazy">
+        <img class="article-photo" src="/images/gallery/montazh-sverlenie.jpg" alt="Процесс монтажа — сверление коронкой и вырез по шаблону" loading="lazy">
 
         <h3>Сложно ли плиточнику это установить</h3>
         <p>Монтаж выполняется стандартным инструментом плиточника и не требует нестандартных операций. Основная задача — точный вырез по шаблону и аккуратный вывод конструкции в уровень с плиткой. Мастер, который уверенно режет плитку под смесители и трубы, освоит установку по инструкции с первого-второго комплекта.</p>
@@ -273,7 +273,7 @@
           <li>открытая инструкция: PDF с монтажом доступен на сайте до покупки — покажите мастеру и примите решение спокойно.</li>
         </ul>
 
-        <img class="article-photo" src="/images/gallery/montazh-kuhnya-fartuk.jpg" alt="Готовая кухня со скрытыми розетками, общий план" width="1200" height="675" loading="lazy">
+        <img class="article-photo" src="/images/gallery/montazh-kuhnya-fartuk.jpg" alt="Готовая кухня со скрытыми розетками, общий план" loading="lazy">
 
         <div class="hero-actions" style="margin-top:1.5rem">
           <a href="/download/" class="btn btn-outline">Скачать инструкцию PDF</a>
