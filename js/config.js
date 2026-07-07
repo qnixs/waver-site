@@ -10,7 +10,7 @@ window.WAVER_CONFIG = {
 
   telegram: "https://t.me/tontreader",
   telegramLabel: "Написать в Telegram",
-  whatsapp: "https://wa.me/79959342806",
+  whatsapp: "https://wa.me/79088729490",
   whatsappLabel: "Написать в WhatsApp",
   phone: "+7 908 872-94-90",
   phoneHref: "tel:+79088729490",
