@@ -26,9 +26,9 @@
           "Hidden flush-mount sockets and switches recessed into tile and porcelain stoneware. For kitchen and bathroom. Pro pricing for tilers. Delivery across Russia from Tyumen.",
       }
     : {
-        title: "Скрытые розетки заподлицо в керамограните — WAVER STORE | кухня и ванная",
+        title: "Скрытые розетки заподлицо с плиткой и керамогранитом — купить | WAVER STORE",
         description:
-          "Скрытые розетки и выключатели заподлицо с плиткой и керамогранитом. Монтаж вровень, без рамок. Спеццены для плиточников и мастеров. Доставка по России из Тюмени.",
+          "Скрытые розетки и выключатели со скрытым монтажом заподлицо с плиткой и керамогранитом — без рамок и выступов. Розетки на кухню и в ванную, блоки из 2–3 постов. Цена от 4 000 ₽, шаблон для реза и инструкция в комплекте. Производство в Тюмени, доставка по всей России.",
       };
 
   const pageMeta = {
@@ -106,9 +106,8 @@
 
   document.title = meta.title;
   upsertMeta("description", meta.description);
-  const isBlog = lookupPath === "/blog" || lookupPath.startsWith("/blog/");
   const isThanks = lookupPath === "/thanks";
-  upsertMeta("robots", isBlog || isThanks ? "noindex, nofollow" : "index, follow");
+  upsertMeta("robots", isThanks ? "noindex, nofollow" : "index, follow");
   upsertLink("canonical", canonical);
 
   const hasEnMirror =

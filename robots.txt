@@ -1,7 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /blog/
-Disallow: /english/blog/
 Disallow: /thanks/
 Disallow: /english/thanks/
 

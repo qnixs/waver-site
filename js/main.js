@@ -126,10 +126,24 @@
     });
   }
 
+  function getBaseUnitPrice(master) {
+    // Цена без скидки за количество (тариф 1–4 шт)
+    return (master ? PRICES.master : PRICES.retail)[1];
+  }
+
+  function getNextTier(totalQty) {
+    const thresholds = [5, 10, 20, 30];
+    for (const threshold of thresholds) {
+      if (totalQty < threshold) return threshold;
+    }
+    return null;
+  }
+
   function updateSummary() {
     const totalQty = getTotalQty();
     const unitPrice = totalQty > 0 ? getUnitPrice(totalQty, isMaster) : 0;
     const retailUnit = totalQty > 0 ? getUnitPrice(totalQty, false) : 0;
+    const baseUnit = getBaseUnitPrice(isMaster);
     const delivery = deliveryValue ? deliveryValue.value : "";
 
     let total = 0;
@@ -147,18 +161,44 @@
       }
     });
 
+    // Скидка за количество: экономия относительно цены 1–4 шт
+    const qtySavings = totalQty > 0 ? (baseUnit - unitPrice) * totalQty : 0;
+    const baseTotal = baseUnit * totalQty;
+
     if (totalQty === 0) {
       addLine(t("Добавьте товары", "Add products"), "—");
     } else {
-      addLine(t("Цена за шт", "Unit price"), formatMoney(unitPrice) + " · " + getTierLabel(totalQty));
+      if (qtySavings > 0) {
+        addLine(
+          t("Цена за шт", "Unit price"),
+          '<s class="old-unit">' + formatMoney(baseUnit) + "</s> " +
+            '<span class="new-unit">' + formatMoney(unitPrice) + "</span> · " + getTierLabel(totalQty)
+        );
+      } else {
+        addLine(t("Цена за шт", "Unit price"), formatMoney(unitPrice) + " · " + getTierLabel(totalQty));
+      }
       addLine(t("Тариф", "Pricing"), isMaster ? t("Мастер / плиточник", "Pro / tiler") : t("Розница", "Retail"));
-      const savings = isMaster ? (retailUnit - unitPrice) * totalQty : 0;
-      if (savings > 0) addLine(t("Экономия vs розницы", "Savings vs retail"), "− " + formatMoney(savings), "savings");
+      if (qtySavings > 0) {
+        addLine(t("Скидка за количество", "Quantity discount"), "− " + formatMoney(qtySavings), "savings");
+      }
     }
 
     if (delivery) addLine(t("Доставка", "Delivery"), delivery);
 
-    if (totalPriceEl) totalPriceEl.textContent = totalQty > 0 ? formatMoney(total) : "0 ₽";
+    // Итог: зачёркнутая старая цена + зелёная новая при активной скидке
+    if (totalPriceEl) {
+      if (totalQty === 0) {
+        totalPriceEl.textContent = "0 ₽";
+      } else if (qtySavings > 0) {
+        totalPriceEl.innerHTML =
+          '<s class="old-total">' + formatMoney(baseTotal) + "</s>" +
+          '<span class="new-total">' + formatMoney(total) + "</span>";
+      } else {
+        totalPriceEl.textContent = formatMoney(total);
+      }
+    }
+
+    updateNudge(totalQty, unitPrice, baseUnit);
 
     const summaryField = document.getElementById("hidden-order-summary");
     if (summaryField) summaryField.value = orderParts.join("; ") || "пусто";
@@ -169,12 +209,46 @@
       "hidden-total-qty": totalQty,
       "hidden-tariff": isMaster ? t("Мастер", "Pro") : t("Розница", "Retail"),
       "hidden-tier": getTierLabel(totalQty),
-      "hidden-savings": isMaster && totalQty > 0 ? (retailUnit - unitPrice) * totalQty : 0,
+      "hidden-savings": qtySavings > 0 ? qtySavings : 0,
     };
     Object.entries(fields).forEach(([id, val]) => {
       const el = document.getElementById(id);
       if (el) el.value = val;
     });
+  }
+
+  function updateNudge(totalQty, unitPrice, baseUnit) {
+    const nudge = document.getElementById("order-nudge");
+    if (!nudge) return;
+    if (totalQty <= 0) {
+      nudge.hidden = true;
+      return;
+    }
+    const nextTier = getNextTier(totalQty);
+    if (!nextTier) {
+      nudge.hidden = true;
+      return;
+    }
+    const need = nextTier - totalQty;
+    // Подсказываем, только если до скидки осталось 1–2 шт
+    if (need > 2) {
+      nudge.hidden = true;
+      return;
+    }
+    const nextUnit = getUnitPrice(nextTier, isMaster);
+    if (nextUnit >= unitPrice) {
+      nudge.hidden = true;
+      return;
+    }
+    const perUnitSave = baseUnit - nextUnit;
+    nudge.hidden = false;
+    nudge.innerHTML = isEnglish
+      ? "Add <strong>" + need + " more</strong> to reach <strong>" + nextTier +
+        " pcs</strong> — the price drops to <strong>" + formatMoney(nextUnit) +
+        "/pc</strong>."
+      : "Добавьте ещё <strong>" + need + " шт</strong> до <strong>" + nextTier +
+        " шт</strong> — цена снизится до <strong>" + formatMoney(nextUnit) +
+        "/шт</strong> (−" + formatMoney(perUnitSave) + " с каждой).";
   }
 
   function addLine(label, value, extraClass) {
@@ -204,7 +278,7 @@
     });
   }
 
-  function setupDelivery() {
+  function validateForm() {
     if (getTotalQty() < 1) return t("Добавьте хотя бы один товар в заказ", "Add at least one product");
     const name = document.getElementById("name").value.trim();
     const phone = document.getElementById("phone").value.trim();
@@ -279,7 +353,7 @@
       <table class="price-table price-table--dual">
         <thead>
           <tr>
-            <th>${t("Партия", "Quantity")}</th>
+            <th>${t("Заказ", "Quantity")}</th>
             <th>${t("Розница", "Retail")}</th>
             <th>${t("Мастера", "Pro")}</th>
           </tr>
