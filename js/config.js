@@ -44,7 +44,7 @@ window.WAVER_CONFIG = {
   // 2. Укажи адрес сайта waverstore.site и создай счётчик
   // 3. Скопируй НОМЕР счётчика (8–9 цифр) и вставь сюда в кавычках, например: "99123456"
   // 4. Опубликуй изменения (git push) — код Метрики подключится на всех страницах сам
-  yandexMetrikaId: "",
+  yandexMetrikaId: "110481134",
 
   heroImages: [
     { src: "/images/hero/skrytaya-rozetka-kuhnya.jpg", alt: "Скрытая розетка заподлицо в керамограните на кухне WAVER STORE" },

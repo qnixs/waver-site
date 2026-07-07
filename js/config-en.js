@@ -20,7 +20,7 @@ window.WAVER_CONFIG = {
     ogImage: "/images/hero/skrytaya-rozetka-kuhnya.jpg",
   },
 
-  yandexMetrikaId: "",
+  yandexMetrikaId: "110481134",
 
   heroImages: [
     { src: "/images/hero/skrytaya-rozetka-kuhnya.jpg", alt: "Flush-mounted hidden socket in porcelain stoneware kitchen WAVER STORE" },

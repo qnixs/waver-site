@@ -65,6 +65,9 @@
     "/blog/dlya-plitochnikov": isEnglish
       ? { title: "Hidden sockets for tilers — WAVER STORE", description: "How tilers sell flush sockets to clients and earn more with WAVER STORE." }
       : { title: "Скрытые розетки для плиточников — WAVER STORE", description: "Как плиточникам предлагать скрытые розетки клиентам и зарабатывать больше." },
+    "/blog/skrytye-rozetki-zapodlico": isEnglish
+      ? { title: "Flush-Mounted Hidden Sockets in Tile: What They Are, Types & Installation — WAVER STORE", description: "What flush-mounted hidden sockets are: types, pros and cons, kitchen and bathroom installation, prices and FAQ. The complete WAVER STORE guide." }
+      : { title: "Скрытые розетки заподлицо с плиткой: что это, виды и монтаж — WAVER STORE", description: "Что такое скрытые розетки заподлицо: виды, плюсы и минусы, монтаж на кухне и в ванной, цены и частые вопросы. Полный гид WAVER STORE." },
   };
 
   const meta = pageMeta[lookupPath] || defaults;
