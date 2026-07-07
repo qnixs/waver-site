@@ -1,35 +1,23 @@
-import Link from 'next/link'
-
 export default function Page() {
   return (
-    <main className="min-h-screen flex items-center justify-center bg-white px-4">
-      <div className="text-center max-w-sm">
-        <p className="text-xs font-semibold tracking-widest uppercase text-gray-400 mb-4">
-          WAVER STORE
-        </p>
-        <h1 className="text-2xl font-bold text-gray-900 mb-3 text-balance">
-          Скрытые розетки заподлицо с плиткой
-        </h1>
-        <p className="text-gray-500 text-sm leading-relaxed mb-8">
-          Статья-руководство для тех, кто делает ремонт
-        </p>
-        <Link
-          href="/blog/skrytye-rozetki"
-          className="inline-flex items-center gap-2 bg-gray-900 text-white text-sm font-semibold px-6 py-3 rounded-lg hover:bg-gray-700 transition-colors"
-        >
-          Читать статью
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="size-4"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth={2}
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-          </svg>
-        </Link>
-      </div>
+    <main className="relative flex min-h-screen items-center justify-center bg-[color:light-dark(#fff,#000)] text-[color:light-dark(#000,#fff)]">
+      <svg
+        aria-hidden="true"
+        className="size-20"
+        fill="none"
+        viewBox="0 0 20 20"
+        xmlns="http://www.w3.org/2000/svg"
+        stroke="currentColor"
+        strokeWidth="0.5"
+      >
+        <path
+          d="M14.2 14.2H17V6.9375C17 4.76288 15.2371 3 13.0625 3H5.8V5.8M14.2 14.2V7.79063L7.79062 14.2H14.2ZM14.2 14.2V17H6.9375C4.76288 17 3 15.2371 3 13.0625V5.8H5.8M5.8 5.8V12.2313L12.2313 5.8H5.8Z"
+          strokeLinejoin="round"
+        />
+      </svg>
+      <p className="absolute left-1/2 top-[calc(50%+56px)] -translate-x-1/2 whitespace-nowrap text-sm font-medium text-muted-foreground">
+        Your v0 generation will show here.
+      </p>
     </main>
   )
 }
