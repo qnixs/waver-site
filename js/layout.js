@@ -159,24 +159,9 @@
   renderNavigation();
   renderLangSwitch();
 
-  if (config.yandexMetrikaId) {
-    (function (m, e, t, r, i, k, a) {
-      m[i] =
-        m[i] ||
-        function () {
-          (m[i].a = m[i].a || []).push(arguments);
-        };
-      m[i].l = 1 * new Date();
-      for (k = 0; k < document.scripts.length; k++) {
-        if (document.scripts[k].src === r) return;
-      }
-      a = e.createElement(t);
-      a.async = 1;
-      a.src = r;
-      e.head.appendChild(a);
-    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-    window.ym(config.yandexMetrikaId, "init", { clickmap: true, trackLinks: true, accurateTrackBounce: true, webvisor: true });
-  }
+  // Яндекс.Метрика подключается статически в <head> каждой страницы
+  // (см. блок "Yandex.Metrika counter"). Здесь инъекция намеренно убрана,
+  // чтобы счётчик не загружался дважды.
 
   document.getElementById("menu-btn")?.addEventListener("click", () => {
     document.getElementById("mobile-nav")?.classList.toggle("open");

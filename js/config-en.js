@@ -100,8 +100,8 @@ window.WAVER_CONFIG = {
     master: { 1: 4200, 5: 4100, 10: 4000, 20: 3900, 30: 3800 },
   },
   seller: {
-    name: "Individual Entrepreneur __________",
-    inn: "____________",
+    // name: "",
+    // inn: "",
     address: "Tyumen, Russia",
   },
 };
