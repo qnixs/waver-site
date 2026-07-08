@@ -47,15 +47,17 @@ window.WAVER_CONFIG = {
   yandexMetrikaId: "110481134",
 
   heroImages: [
+    { src: "/images/gallery/montazh-kuhnya-fartuk.jpg", alt: "Скрытые розетки заподлицо на кухне WAVER STORE" },
+    { src: "/images/gallery/montazh-sverlenie.jpg", alt: "Скрытые розетки заподлицо с тёмной плиткой WAVER STORE" },
     { src: "/images/hero/skrytaya-rozetka-kuhnya.jpg", alt: "Скрытая розетка заподлицо в керамограните на кухне WAVER STORE" },
     { src: "/images/hero/blok-rozetka-vyklyuchatel.jpg", alt: "Блок скрытых розеток и выключателя заподлицо WAVER STORE" },
-  ],
+  ], // порядок: кухня (тёмная плитка) → фото 2 (было первым) → фото 3 (было вторым)
 
   galleryImages: [
-    { src: "/images/gallery/montazh-vannaya-keraogranit.jpg", alt: "Скрытая розетка заподлицо в керамограните монтаж в ванной", caption: "Розетка заподлицо — ванная" },
+    { src: "/images/gallery/montazh-sverlenie.jpg", alt: "Скрытая розетка заподлицо в керамограните монтаж в ванной", caption: "Розетка заподлицо — ванная" },
     { src: "/images/gallery/montazh-kuhnya-fartuk.jpg", alt: "Блок из 2 постов розетка и выключатель в плитке на кухне", caption: "Розетка и выключатель — блок" },
-    { src: "/images/gallery/montazh-vannaya-keraogranit.jpg", alt: "Потайная розетка под плитку WAVER STORE в ванной", caption: "Пример для ванной" },
-    { src: "/images/gallery/montazh-kuhnya-fartuk.jpg", alt: "Скрытые розетки на кухне в керамограните фартук", caption: "Пример для кухни" },
+    { src: "/images/hero/skrytaya-rozetka-kuhnya.jpg", alt: "Процесс монтажа — сверление коронкой и вырез по шаблону", caption: "Процесс монтажа" },
+    { src: "/images/hero/blok-rozetka-vyklyuchatel.jpg", alt: "Комплект скрытой розетки в разборе — все детали", caption: "Комплект в разборе" },
   ],
 
   downloads: [
