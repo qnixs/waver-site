@@ -1,4 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="WAVER STORE">
-  <rect width="32" height="32" rx="7" fill="#b05c2e"/>
-  <text x="16" y="22" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="15" font-weight="700">W</text>
+  <defs>
+    <radialGradient id="g1" cx="88%" cy="8%" r="80%">
+      <stop offset="0%" stop-color="#d97a3f"/>
+      <stop offset="100%" stop-color="#faf8f4" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="g2" cx="8%" cy="92%" r="80%">
+      <stop offset="0%" stop-color="#d97a3f"/>
+      <stop offset="100%" stop-color="#faf8f4" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="32" height="32" rx="7" fill="#faf8f4"/>
+  <rect width="32" height="32" rx="7" fill="url(#g1)"/>
+  <rect width="32" height="32" rx="7" fill="url(#g2)"/>
+  <text x="16" y="23" text-anchor="middle" fill="#16140f" font-family="Arial, sans-serif" font-size="19" font-weight="800">W</text>
 </svg>

@@ -27,15 +27,18 @@ window.WAVER_CONFIG = {
     { src: "/images/hero/blok-rozetka-vyklyuchatel.jpg", alt: "Two-gang hidden socket and switch block WAVER STORE" },
   ],
   galleryImages: [
-    { src: "/images/gallery/montazh-vannaya-keraogranit.jpg", alt: "Hidden flush socket in porcelain stoneware bathroom", caption: "Flush socket — bathroom" },
-    { src: "/images/gallery/montazh-kuhnya-fartuk.jpg", alt: "Two-gang socket and switch block in kitchen tile", caption: "Socket and switch block" },
-    { src: "/images/gallery/montazh-vannaya-keraogranit.jpg", alt: "Recessed socket under tile WAVER STORE bathroom", caption: "Bathroom example" },
-    { src: "/images/gallery/montazh-kuhnya-fartuk.jpg", alt: "Hidden kitchen backsplash sockets in porcelain stoneware", caption: "Kitchen example" },
+    { src: "/images/gallery/montazh-kuhnya-fartuk.jpg", alt: "Hidden flush socket on a kitchen backsplash in dark porcelain stoneware", caption: "Kitchen backsplash" },
+    { src: "/images/gallery/montazh-sverlenie.jpg", alt: "Hidden flush socket in dark porcelain stoneware, close-up", caption: "Dark stoneware" },
+    { src: "/images/gallery/montazh-vannaya-keraogranit.jpg", alt: "Hidden flush socket in a bathroom in light porcelain stoneware", caption: "Bathroom" },
+    { src: "/images/gallery/sravnenie-rozetok.jpg", alt: "Comparison of a regular socket and a WAVER STORE flush socket", caption: "Before / after" },
+    { src: "/images/gallery/komplekt-v-razbore.jpg", alt: "WAVER STORE hidden socket kit, exploded view of all parts", caption: "Kit, exploded view" },
+    { src: "/images/hero/skrytaya-rozetka-kuhnya.jpg", alt: "Hidden flush socket in porcelain stoneware, close-up", caption: "Close-up" },
+    { src: "/images/hero/blok-rozetka-vyklyuchatel.jpg", alt: "Multi-gang block of hidden sockets and a switch, flush-mounted", caption: "Multi-gang block" },
   ],
   downloads: [
     {
       type: "pdf",
-      file: "/files/instrukciya-montazh.pdf",
+      file: "/files/socket_installation_new.pdf",
       label: "Installation manual",
       desc: "Step-by-step guide for electricians and tilers",
     },

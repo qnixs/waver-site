@@ -3,7 +3,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://waverstore.site/</loc>
-    <lastmod>2026-07-02</lastmod>
+    <lastmod>2026-07-10</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://waverstore.site/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://waverstore.site/english/"/>
     <changefreq>weekly</changefreq>
@@ -11,7 +11,7 @@
   </url>
   <url>
     <loc>https://waverstore.site/english/</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-07-10</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://waverstore.site/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://waverstore.site/english/"/>
     <changefreq>weekly</changefreq>
@@ -19,31 +19,31 @@
   </url>
   <url>
     <loc>https://waverstore.site/gallery/</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://waverstore.site/download/</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://waverstore.site/offer/</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://waverstore.site/blog/</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://waverstore.site/blog/skrytye-rozetki-zapodlico/</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-07-10</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://waverstore.site/blog/skrytye-rozetki-zapodlico/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://waverstore.site/english/blog/skrytye-rozetki-zapodlico/"/>
     <changefreq>monthly</changefreq>
@@ -51,7 +51,7 @@
   </url>
   <url>
     <loc>https://waverstore.site/english/blog/skrytye-rozetki-zapodlico/</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-07-10</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://waverstore.site/blog/skrytye-rozetki-zapodlico/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://waverstore.site/english/blog/skrytye-rozetki-zapodlico/"/>
     <changefreq>monthly</changefreq>
@@ -59,49 +59,49 @@
   </url>
   <url>
     <loc>https://waverstore.site/blog/montazh-skrytoj-rozetki/</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://waverstore.site/blog/rozetki-na-kuhne/</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://waverstore.site/blog/rozetki-v-vannoj/</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://waverstore.site/blog/sravnenie-skrytyh-rozetok/</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://waverstore.site/blog/dlya-plitochnikov/</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://waverstore.site/english/gallery/</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://waverstore.site/english/download/</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://waverstore.site/english/offer/</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

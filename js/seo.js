@@ -28,7 +28,7 @@
     : {
         title: "Скрытые розетки заподлицо с плиткой и керамогранитом — купить | WAVER STORE",
         description:
-          "Скрытые розетки и выключатели со скрытым монтажом заподлицо с плиткой и керамогранитом — без рамок и выступов. Розетки на кухню и в ванную, блоки из 2–3 постов. Цена от 4 000 ₽, шаблон для реза и инструкция в комплекте. Производство в Тюмени, доставка по всей России.",
+          "Скрытые розетки и выключатели заподлицо с плиткой и керамогранитом — без рамок. Для кухни и ванной. От 4 000 ₽, доставка по России, производство в Тюмени.",
       };
 
   const pageMeta = {
@@ -169,22 +169,44 @@
     "/gallery": isEnglish ? "Gallery" : "Галерея",
     "/download": isEnglish ? "Downloads" : "Скачать",
     "/offer": isEnglish ? "Terms" : "Оферта",
+    "/blog": isEnglish ? "Articles" : "Статьи",
+  };
+  const homeItem = {
+    "@type": "ListItem",
+    position: 1,
+    name: isEnglish ? "Home" : "Главная",
+    item: siteUrl + (isEnglish ? "/english/" : "/"),
   };
   if (breadcrumbLabels[lookupPath]) {
     injectJsonLd({
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       itemListElement: [
-        {
-          "@type": "ListItem",
-          position: 1,
-          name: isEnglish ? "Home" : "Главная",
-          item: siteUrl + (isEnglish ? "/english/" : "/"),
-        },
+        homeItem,
         {
           "@type": "ListItem",
           position: 2,
           name: breadcrumbLabels[lookupPath],
+          item: canonical,
+        },
+      ],
+    });
+  } else if (lookupPath.startsWith("/blog/") && lookupPath !== "/blog") {
+    injectJsonLd({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        homeItem,
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: isEnglish ? "Articles" : "Статьи",
+          item: siteUrl + enPrefix + "/blog/",
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: meta.title.split(" — ")[0],
           item: canonical,
         },
       ],

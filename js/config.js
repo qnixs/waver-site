@@ -54,10 +54,13 @@ window.WAVER_CONFIG = {
   ], // порядок: кухня (тёмная плитка) → фото 2 (было первым) → фото 3 (было вторым)
 
   galleryImages: [
-    { src: "/images/gallery/montazh-sverlenie.jpg", alt: "Скрытая розетка заподлицо в керамограните монтаж в ванной", caption: "Розетка заподлицо — ванная" },
-    { src: "/images/gallery/montazh-kuhnya-fartuk.jpg", alt: "Блок из 2 постов розетка и выключатель в плитке на кухне", caption: "Розетка и выключатель — блок" },
-    { src: "/images/hero/skrytaya-rozetka-kuhnya.jpg", alt: "Процесс монтажа — сверление коронкой и вырез по шаблону", caption: "Процесс монтажа" },
-    { src: "/images/hero/blok-rozetka-vyklyuchatel.jpg", alt: "Комплект скрытой розетки в разборе — все детали", caption: "Комплект в разборе" },
+    { src: "/images/gallery/montazh-kuhnya-fartuk.jpg", alt: "Скрытая розетка заподлицо на кухонном фартуке в тёмном керамограните", caption: "Кухонный фартук" },
+    { src: "/images/gallery/montazh-sverlenie.jpg", alt: "Скрытая розетка заподлицо в тёмном керамограните крупным планом", caption: "Тёмный керамогранит" },
+    { src: "/images/gallery/montazh-vannaya-keraogranit.jpg", alt: "Скрытая розетка заподлицо в ванной в светлом керамограните", caption: "Ванная комната" },
+    { src: "/images/gallery/sravnenie-rozetok.jpg", alt: "Сравнение обычной розетки и розетки заподлицо WAVER STORE", caption: "Было / стало" },
+    { src: "/images/gallery/komplekt-v-razbore.jpg", alt: "Комплект скрытой розетки WAVER STORE в разборе — все детали", caption: "Комплект в разборе" },
+    { src: "/images/hero/skrytaya-rozetka-kuhnya.jpg", alt: "Скрытая розетка заподлицо в керамограните крупным планом", caption: "Крупный план" },
+    { src: "/images/hero/blok-rozetka-vyklyuchatel.jpg", alt: "Блок из нескольких постов розетки и выключателя заподлицо", caption: "Блок из нескольких постов" },
   ],
 
   downloads: [

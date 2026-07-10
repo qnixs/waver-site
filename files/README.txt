@@ -1,5 +1,5 @@
 Положи сюда PDF для скачивания:
 
-  instrukciya-montazh.pdf
+  komplekt-waverstore.pdf
 
-Путь — в js/config.js → downloads
+Путь — в js/config.js → downloadFile
