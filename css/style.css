@@ -522,6 +522,29 @@ textarea { min-height: 5rem; resize: vertical; }
 .order-nudge { margin: 0.75rem 0 0; padding: 0.7rem 0.85rem; border-radius: 0.6rem; background: rgba(74,222,128,0.12); border: 1px solid rgba(74,222,128,0.4); color: #bbf7d0; font-size: 0.8125rem; line-height: 1.45; }
 .order-nudge strong { color: #4ade80; }
 .form-note { margin: 0.625rem 0 0; text-align: center; font-size: 0.6875rem; line-height: 1.5; color: var(--muted-light); }
+
+.consent-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin: 0.25rem 0 1rem;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: #c9c4bc;
+  cursor: pointer;
+}
+.consent-check input {
+  margin-top: 0.15rem;
+  flex-shrink: 0;
+  width: 1rem;
+  height: 1rem;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+.consent-check a { color: #e8b58f; text-decoration: underline; }
+.consent-check a:hover { color: #fff; }
+.consent-check.invalid { color: #fca5a5; }
+.consent-check.invalid a { color: #fecaca; }
 .form-error { margin-top: 0.625rem; padding: 0.625rem; border-radius: 0.5rem; background: rgba(220,38,38,0.1); color: #b91c1c; font-size: 0.8125rem; display: none; }
 .form-error.visible { display: block; }
 
@@ -542,6 +565,13 @@ textarea { min-height: 5rem; resize: vertical; }
 .gallery-page-item { border-radius: 0.75rem; overflow: hidden; background: #e8e4dc; }
 .gallery-page-item img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
 .gallery-page-item figcaption { padding: 0.625rem 0.75rem; font-size: 0.8125rem; background: var(--white); border: 1px solid var(--border-card); border-top: none; border-radius: 0 0 0.75rem 0.75rem; }
+
+/* Телефон: одна колонка — фото крупнее и лучше видны */
+@media (max-width: 480px) {
+  .gallery-preview { grid-template-columns: 1fr; gap: 0.875rem; }
+  .gallery-preview-item { aspect-ratio: 4/3; }
+  .gallery-page-grid { grid-template-columns: 1fr; gap: 1rem; }
+}
 
 /* Contacts */
 .contacts-section { text-align: center; }
@@ -1586,8 +1616,13 @@ section[id] { scroll-margin-top: 4.5rem; }
 }
 .cta-row .btn { flex: 1 1 13rem; text-align: center; }
 @media (max-width: 480px) {
-  .cta-row { flex-direction: column; }
-  .cta-row .btn { width: 100%; }
+  .cta-row { flex-direction: column; gap: 0.625rem; margin-top: 1.5rem; }
+  .cta-row .btn {
+    flex: 0 0 auto;
+    width: 100%;
+    padding: 0.7rem 1.25rem;
+    font-size: 0.8125rem;
+  }
 }
 
 /* Фото: карусель и галерея — премиальные детали */

@@ -110,6 +110,7 @@
             <a href="${blogHref}">${t("Статьи", "Articles")}</a>
             <a href="${page("/download")}">${t("Скачать", "Download")}</a>
             <a href="${page("/offer")}">${t("Оферта", "Terms")}</a>
+            <a href="${page("/privacy")}">${t("Конфиденциальность", "Privacy")}</a>
             <a href="${orderHref}">${t("Заказать", "Order")}</a>
           </div>
           <nav class="footer-sitemap" aria-label="${t("Карта сайта", "Sitemap")}">

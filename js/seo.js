@@ -28,7 +28,7 @@
     : {
         title: "Скрытые розетки заподлицо с плиткой и керамогранитом — купить | WAVER STORE",
         description:
-          "Скрытые розетки и выключатели заподлицо с плиткой и керамогранитом — без рамок. Для кухни и ванной. От 4 000 ₽, доставка по России, производство в Тюмени.",
+          "Скрытые розетки и выключатели заподлицо с плиткой и керамогранитом — без рамок. Для кухни и ванной. От 2 999 ₽, доставка по России, производство в Тюмени.",
       };
 
   const pageMeta = {
@@ -47,6 +47,9 @@
     "/offer": isEnglish
       ? { title: "Terms of offer — WAVER STORE", description: "Public offer terms for WAVER STORE orders." }
       : { title: "Публичная оферта — WAVER STORE", description: "Публичная оферта интернет-магазина WAVER STORE." },
+    "/privacy": isEnglish
+      ? { title: "Privacy Policy — WAVER STORE", description: "What data WAVER STORE collects on the website, why, how it's stored, and how to delete it." }
+      : { title: "Политика конфиденциальности — WAVER STORE", description: "Какие данные собираются на сайте WAVER STORE, зачем, как хранятся и как их удалить." },
     "/blog": isEnglish
       ? { title: "Articles — hidden sockets WAVER STORE", description: "Guides on flush-mounted sockets for kitchen, bathroom and tilers." }
       : { title: "Статьи о скрытых розетках — WAVER STORE", description: "Статьи: розетки в ванной, на кухне, монтаж заподлицо, сравнение решений." },
@@ -118,7 +121,8 @@
     path === "/english" ||
     lookupPath === "/gallery" ||
     lookupPath === "/download" ||
-    lookupPath === "/offer";
+    lookupPath === "/offer" ||
+    lookupPath === "/privacy";
 
   if (hasEnMirror) {
     const ruHref =
@@ -169,6 +173,7 @@
     "/gallery": isEnglish ? "Gallery" : "Галерея",
     "/download": isEnglish ? "Downloads" : "Скачать",
     "/offer": isEnglish ? "Terms" : "Оферта",
+    "/privacy": isEnglish ? "Privacy Policy" : "Конфиденциальность",
     "/blog": isEnglish ? "Articles" : "Статьи",
   };
   const homeItem = {
@@ -223,8 +228,8 @@
       image: ogImage,
       offers: {
         "@type": "AggregateOffer",
-        lowPrice: String((config.prices?.master || {})[30] || 3800),
-        highPrice: String((config.prices?.retail || {})[1] || 4500),
+        lowPrice: String((config.prices?.master || {})[30] || 1999),
+        highPrice: String((config.prices?.retail || {})[1] || 2999),
         priceCurrency: "RUB",
         availability: "https://schema.org/InStock",
         url: siteUrl + enPrefix + "/#order",

@@ -105,4 +105,20 @@
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
+  <url>
+    <loc>https://waverstore.site/privacy/</loc>
+    <lastmod>2026-07-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://waverstore.site/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://waverstore.site/english/privacy/"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://waverstore.site/english/privacy/</loc>
+    <lastmod>2026-07-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://waverstore.site/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://waverstore.site/english/privacy/"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
 </urlset>

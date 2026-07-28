@@ -71,6 +71,16 @@ window.WAVER_CONFIG = {
         "Combines with socket into one block",
       ],
     },
+    {
+      title: "Double-gang switch, 1 gang",
+      items: [
+        "Frame with double-gang switch mechanism",
+        "Mounting hardware",
+        "Cut-out template for porcelain stoneware",
+        "Installation manual",
+        "Combines with socket and other switches into one block",
+      ],
+    },
   ],
   orderProducts: [
     {
@@ -93,14 +103,14 @@ window.WAVER_CONFIG = {
       id: "switch2",
       field: "qty_switch2",
       name: "Double-gang switch, 1 gang",
-      sub: "Coming soon",
+      sub: "Flush in porcelain stoneware · in stock",
       defaultQty: 0,
-      available: false,
+      available: true,
     },
   ],
   prices: {
-    retail: { 1: 4500, 5: 4350, 10: 4250, 20: 4150, 30: 4050 },
-    master: { 1: 4200, 5: 4100, 10: 4000, 20: 3900, 30: 3800 },
+    retail: { 1: 2999, 5: 2899, 10: 2799, 20: 2699, 30: 2599 },
+    master: { 1: 2799, 5: 2599, 10: 2399, 20: 2199, 30: 1999 },
   },
   seller: {
     // name: "",

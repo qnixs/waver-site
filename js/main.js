@@ -5,8 +5,8 @@
   const t = (ru, en) => (isEnglish ? en : ru);
 
   const PRICES = config.prices || {
-    retail: { 1: 4500, 5: 4350, 10: 4250, 20: 4150, 30: 4050 },
-    master: { 1: 4200, 5: 4100, 10: 4000, 20: 3900, 30: 3800 },
+    retail: { 1: 2999, 5: 2899, 10: 2799, 20: 2699, 30: 2599 },
+    master: { 1: 2799, 5: 2599, 10: 2399, 20: 2199, 30: 1999 },
   };
 
   const PRODUCTS = config.orderProducts || [];
@@ -283,9 +283,16 @@
     const name = document.getElementById("name").value.trim();
     const phone = document.getElementById("phone").value.trim();
     const email = document.getElementById("email").value.trim();
+    const consent = document.getElementById("consent-checkbox");
     if (!name) return t("Укажите имя", "Enter your name");
     if (!phone || phone.replace(/\D/g, "").length < 10) return t("Укажите корректный телефон", "Enter a valid phone number");
     if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return t("Проверьте email", "Check your email");
+    if (consent && !consent.checked) {
+      return t(
+        "Подтвердите согласие с офертой и политикой конфиденциальности",
+        "Please confirm you agree to the offer and privacy policy"
+      );
+    }
     if (!config.formspreeId) return t("Форма временно недоступна", "Form is temporarily unavailable");
     return "";
   }
@@ -299,8 +306,13 @@
     const nextField = document.getElementById("form-next");
     if (nextField) nextField.value = new URL(langPrefix + "/thanks/", window.location.origin).href;
 
+    const consent = document.getElementById("consent-checkbox");
+    const consentLabel = document.querySelector(".consent-check");
+    consent?.addEventListener("change", () => consentLabel?.classList.remove("invalid"));
+
     form.addEventListener("submit", (e) => {
       const error = validateForm();
+      consentLabel?.classList.toggle("invalid", !!(consent && !consent.checked));
       if (error) {
         e.preventDefault();
         formError.textContent = error;
