@@ -329,12 +329,20 @@
     const grid = document.getElementById("gallery-preview");
     const images = config.galleryImages || [];
     if (!grid || images.length === 0) return;
-    grid.innerHTML = images.map((img) => `
+    const PREVIEW_COUNT = 6;
+    grid.innerHTML = images.slice(0, PREVIEW_COUNT).map((img) => `
       <a href="${langPrefix}/gallery" class="gallery-preview-item">
         <img src="${img.src}" alt="${img.alt || ""}" loading="lazy">
         <span>${img.caption || ""}</span>
       </a>
     `).join("");
+    const moreBtn = document.getElementById("gallery-preview-more");
+    if (moreBtn && images.length > PREVIEW_COUNT) {
+      moreBtn.textContent = t(
+        `Смотреть все фото (${images.length}) →`,
+        `View all photos (${images.length}) →`
+      );
+    }
   }
 
   function setupKitContents() {
