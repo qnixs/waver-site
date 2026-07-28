@@ -383,6 +383,20 @@
     `;
   }
 
+  function updatePriceMentions() {
+    // Единая точка правды — цифры в тексте страницы (стата, FAQ, карточки) берутся из config.prices,
+    // чтобы при изменении цены не пришлось искать её по всему HTML.
+    const slots = {
+      "retail-1": PRICES.retail[1],
+      "master-10": PRICES.master[10],
+      "master-30": PRICES.master[30],
+    };
+    document.querySelectorAll("[data-price]").forEach((el) => {
+      const value = slots[el.dataset.price];
+      if (value != null) el.textContent = formatMoney(value);
+    });
+  }
+
   buildLineItems();
   setupMasterToggle();
   setupDelivery();
@@ -390,5 +404,6 @@
   setupGalleryPreview();
   setupKitContents();
   renderPriceTable();
+  updatePriceMentions();
   updateSummary();
 })();
