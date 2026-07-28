@@ -34,6 +34,13 @@ window.WAVER_CONFIG = {
     { src: "/images/gallery/komplekt-v-razbore.jpg", alt: "WAVER STORE hidden socket kit, exploded view of all parts", caption: "Kit, exploded view" },
     { src: "/images/hero/skrytaya-rozetka-kuhnya.jpg", alt: "Hidden flush socket in porcelain stoneware, close-up", caption: "Close-up" },
     { src: "/images/hero/blok-rozetka-vyklyuchatel.jpg", alt: "Multi-gang block of hidden sockets and a switch, flush-mounted", caption: "Multi-gang block" },
+    { src: "/images/gallery/rozetka-krupnyj-plan-bezh.webp", alt: "Hidden flush socket close-up in beige porcelain stoneware", caption: "Beige stoneware" },
+    { src: "/images/gallery/rozetka-krupnyj-plan-temnyj-kamen.webp", alt: "Hidden flush socket close-up in dark grey stone", caption: "Dark stone" },
+    { src: "/images/gallery/rozetka-krupnyj-plan-mramor-svetlyj.webp", alt: "Hidden flush socket close-up in light marble", caption: "Light marble" },
+    { src: "/images/gallery/rozetka-krupnyj-plan-sero-goluboj-mramor.webp", alt: "Hidden flush socket close-up in grey-blue marble", caption: "Grey-blue marble" },
+    { src: "/images/gallery/rozetka-cveta-kollazh.webp", alt: "WAVER STORE hidden socket matched to four stoneware colors", caption: "Matches any color" },
+    { src: "/images/gallery/montazh-vannaya-minimalizm.webp", alt: "Hidden flush socket in a minimalist bathroom with round mirror", caption: "Minimalist bathroom" },
+    { src: "/images/gallery/montazh-kuhnya-temnaya-atmosfernaya.webp", alt: "Hidden flush socket in a dark moody kitchen backsplash", caption: "Evening kitchen" },
   ],
   downloads: [
     {

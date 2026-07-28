@@ -61,6 +61,13 @@ window.WAVER_CONFIG = {
     { src: "/images/gallery/komplekt-v-razbore.jpg", alt: "Комплект скрытой розетки WAVER STORE в разборе — все детали", caption: "Комплект в разборе" },
     { src: "/images/hero/skrytaya-rozetka-kuhnya.jpg", alt: "Скрытая розетка заподлицо в керамограните крупным планом", caption: "Крупный план" },
     { src: "/images/hero/blok-rozetka-vyklyuchatel.jpg", alt: "Блок из нескольких постов розетки и выключателя заподлицо", caption: "Блок из нескольких постов" },
+    { src: "/images/gallery/rozetka-krupnyj-plan-bezh.webp", alt: "Скрытая розетка заподлицо крупным планом в бежевом керамограните", caption: "Бежевый керамогранит" },
+    { src: "/images/gallery/rozetka-krupnyj-plan-temnyj-kamen.webp", alt: "Скрытая розетка заподлицо крупным планом в тёмном камне", caption: "Тёмный камень" },
+    { src: "/images/gallery/rozetka-krupnyj-plan-mramor-svetlyj.webp", alt: "Скрытая розетка заподлицо крупным планом в светлом мраморе", caption: "Светлый мрамор" },
+    { src: "/images/gallery/rozetka-krupnyj-plan-sero-goluboj-mramor.webp", alt: "Скрытая розетка заподлицо крупным планом в серо-голубом мраморе", caption: "Серо-голубой мрамор" },
+    { src: "/images/gallery/rozetka-cveta-kollazh.webp", alt: "Розетка WAVER STORE в цвет под четыре разных облицовки", caption: "Сочетается с любым цветом" },
+    { src: "/images/gallery/montazh-vannaya-minimalizm.webp", alt: "Скрытая розетка заподлицо в минималистичной ванной с круглым зеркалом", caption: "Минималистичная ванная" },
+    { src: "/images/gallery/montazh-kuhnya-temnaya-atmosfernaya.webp", alt: "Скрытая розетка заподлицо на тёмном атмосферном кухонном фартуке", caption: "Вечерняя кухня" },
   ],
 
   downloads: [
