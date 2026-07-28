@@ -155,7 +155,7 @@ window.WAVER_CONFIG = {
   // раскомментируй строки и верни соответствующие <span data-seller-name>/<span data-seller-inn> в offer/index.html.
   seller: {
     // name: "",
-    // inn: "",
+    inn: "720302795595",
     address: "г. Тюмень",
   },
 };

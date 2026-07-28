@@ -121,7 +121,7 @@ window.WAVER_CONFIG = {
   },
   seller: {
     // name: "",
-    // inn: "",
+    inn: "720302795595",
     address: "Tyumen, Russia",
   },
 };
