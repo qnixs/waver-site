@@ -140,6 +140,7 @@
   }
 
   function updateSummary() {
+    if (!summaryLines) return;
     const totalQty = getTotalQty();
     const unitPrice = totalQty > 0 ? getUnitPrice(totalQty, isMaster) : 0;
     const retailUnit = totalQty > 0 ? getUnitPrice(totalQty, false) : 0;

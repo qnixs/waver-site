@@ -1707,3 +1707,15 @@ body.lightbox-lock { overflow: hidden; }
   .carousel-slide { transition: opacity 0.5s ease; transform: none; }
   .guide-card-hero, .article-links > a svg, .gallery-preview-item, .gallery-page-item { transition: none; }
 }
+
+/* ── Маркетплейсы ── */
+.btn-marketplace { color: #fff; padding: 0.875rem 1.5rem; font-size: 0.9375rem; }
+.btn-ozon { background: #005bff; }
+.btn-ozon:hover { background: #004ad1; }
+.btn-wb { background: #a73afd; }
+.btn-wb:hover { background: #9124e6; }
+.btn-yandex { background: #fc3f1d; }
+.btn-yandex:hover { background: #e2361a; }
+.marketplace-buttons { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+.marketplace-buttons .btn-marketplace { flex: 1 1 12rem; text-align: center; justify-content: center; }
+.footer-messenger .btn-marketplace { padding: 0.5rem 1rem; font-size: 0.8125rem; }

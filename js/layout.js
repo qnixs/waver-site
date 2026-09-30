@@ -97,11 +97,8 @@
         <div>
           <p class="footer-logo" data-brand>${brand}</p>
           <p>${t("Производство: г. Тюмень", "Made in Tyumen, Russia")}</p>
-          <p><a href="tel:+79088729490" style="color:inherit">+7 908 872-94-90</a></p>
-          <div class="footer-messenger">
-            <a id="footer-telegram" href="#" class="btn btn-telegram" target="_blank" rel="noopener">Telegram</a>
-            <a id="footer-whatsapp" href="#" class="btn btn-whatsapp" target="_blank" rel="noopener">WhatsApp</a>
-          </div>
+          <p>${t("Купить на маркетплейсах:", "Buy on marketplaces:")}</p>
+          <div class="footer-messenger" data-marketplaces></div>
         </div>
         <div>
           <div class="footer-links">
@@ -129,21 +126,12 @@
   function applyContactLinks() {
     document.querySelectorAll("[data-brand]").forEach((el) => { el.textContent = brand; });
 
-    const tg = document.getElementById("footer-telegram");
-    const wa = document.getElementById("footer-whatsapp");
-    const tgHero = document.getElementById("contact-telegram");
-    const waHero = document.getElementById("contact-whatsapp");
-
-    if (tg && config.telegram) {
-      tg.href = config.telegram;
-      tg.textContent = isEnglish ? "Telegram" : (config.telegramLabel || "Telegram");
-    }
-    if (wa && config.whatsapp) {
-      wa.href = config.whatsapp;
-      wa.textContent = isEnglish ? "WhatsApp" : (config.whatsappLabel || "WhatsApp");
-    }
-    if (tgHero && config.telegram) tgHero.href = config.telegram;
-    if (waHero && config.whatsapp) waHero.href = config.whatsapp;
+    const marketplaces = config.marketplaces || [];
+    document.querySelectorAll("[data-marketplaces]").forEach((host) => {
+      host.innerHTML = marketplaces
+        .map((m) => `<a href="${m.url}" class="btn btn-marketplace btn-${m.id}" target="_blank" rel="noopener">${m.name}</a>`)
+        .join("");
+    });
 
     document.querySelectorAll("[data-pickup-address]").forEach((el) => {
       if (config.pickupAddress) el.textContent = config.pickupAddress;

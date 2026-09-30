@@ -2,10 +2,11 @@ window.WAVER_CONFIG = {
   brand: "WAVER STORE",
   logo: "",
   formspreeId: "xqeoggwp",
-  telegram: "https://t.me/tontreader",
-  telegramLabel: "Message on Telegram",
-  whatsapp: "https://wa.me/79959342806",
-  whatsappLabel: "Message on WhatsApp",
+  marketplaces: [
+    { id: "ozon", name: "Ozon", url: "https://ozon.ru/t/8MftNE3" },
+    { id: "wb", name: "Wildberries", url: "https://www.wildberries.ru/catalog/1329139975/detail.aspx?targetUrl=SN" },
+    { id: "yandex", name: "Yandex Market", url: "https://market.yandex.ru/cc/BCHmUD" },
+  ],
   yandexMaps: {
     apiKey: "c0567da7-de5e-4a15-b3f5-2193b515bbc1",
     defaultCenter: [57.1522, 65.5272],

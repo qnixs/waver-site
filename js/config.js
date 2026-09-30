@@ -8,12 +8,12 @@ window.WAVER_CONFIG = {
   // Formspree ID — публичный адрес формы, не пароль.
   formspreeId: "xqeoggwp",
 
-  telegram: "https://t.me/tontreader",
-  telegramLabel: "Написать в Telegram",
-  whatsapp: "https://wa.me/79088729490",
-  whatsappLabel: "Написать в WhatsApp",
-  phone: "+7 908 872-94-90",
-  phoneHref: "tel:+79088729490",
+  // Продажи временно только через маркетплейсы — телефон и мессенджеры убраны с сайта.
+  marketplaces: [
+    { id: "ozon", name: "Ozon", url: "https://ozon.ru/t/8MftNE3" },
+    { id: "wb", name: "Wildberries", url: "https://www.wildberries.ru/catalog/1329139975/detail.aspx?targetUrl=SN" },
+    { id: "yandex", name: "Яндекс Маркет", url: "https://market.yandex.ru/cc/BCHmUD" },
+  ],
 
   // ── ЯНДЕКС.КАРТЫ (выбор адреса / ПВЗ в форме заказа) ──
   // developer.tech.yandex.ru → «JavaScript API и HTTP Геокодер»
